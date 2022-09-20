@@ -6,8 +6,13 @@ import Home from './HomeComponent';
 import Locations from './LocationsComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
+import Ontario from './OntarioComponent';
+import BritishColumbia from './BritishColumbia';
+import Alberta from './AlbertaComponent';
+import Quebec from './QuebecComponent';
 import { LOCATIONS } from '../shared/locations';
 import {TESTEMONIALS} from '../shared/testemonials';
+import { COMMENTS } from '../shared/comments';
 
 
 class Main extends Component {
@@ -16,7 +21,8 @@ class Main extends Component {
 
         this.state = {
             location: LOCATIONS,
-            testemonial: TESTEMONIALS
+            testemonial: TESTEMONIALS,
+            comments: COMMENTS
         }
 
     }
@@ -25,6 +31,7 @@ class Main extends Component {
         //     <Home />
         // }
         return (
+            // MAIN ROUTES
             <div>
                 <Header />
                 <Switch>
@@ -38,6 +45,10 @@ class Main extends Component {
                         /> 
                     }/>
                     <Route exact path='/locations' component={ () => <Locations /> } />
+                    <Route exact path='/locations/ontario' component={ () => <Ontario />} />
+                    <Route exact path='/locations/british-columbia' component={ () => <BritishColumbia />} />
+                    <Route exact path='/locations/alberta' component={ () => <Alberta />} />
+                    <Route exact path='/locations/quebec' component={ () => <Quebec />} />
                     <Route exact path='/about' component={ () => <About /> } />
                     <Route exact path='/contact' component={ () => <Contact /> } />
                     <Redirect to='/home' />

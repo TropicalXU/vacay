@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button} from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 class Home extends Component  {
@@ -9,9 +10,8 @@ class Home extends Component  {
        
     }
 
-
     render() {
-
+        {/* HOMEPAGE HEADER */}
         function HomeHeader() {
             return (
                 <div className='container my-3'>
@@ -25,7 +25,7 @@ class Home extends Component  {
             )
         }
 
-
+        {/* HOMEPAGE - FEATURED CARDS */}
         function RenderCard({location}) {
             return (
                 <Card className='text-center'>
@@ -35,11 +35,14 @@ class Home extends Component  {
                         <CardText>{location.description}</CardText>
                         <h3>$ {location.price}</h3>
                     </CardBody>
-                    <Button color='primary'>View</Button>
+                    <Link className='btn btn-primary' to={`/locations/${location.id}`}>
+                       View
+                    </Link>
                 </Card>
             )
         }
 
+        {/*HOMEPAGE - FEATURED TESTEMONIALS */}
         function RenderTestemonials({testemonial}) {
             return (
                 <Card className='testemonial'>

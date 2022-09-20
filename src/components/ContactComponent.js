@@ -17,6 +17,7 @@ class Contact extends Component {
     render() {
         
         return (
+            //CONTACT FORM
             <div className='container align-items-center'>
                 <div className='row'>
                     <div className='col col-sm-8'>

@@ -1,3 +1,4 @@
+//LOCATION DATA
 export const LOCATIONS = 
     [
         {

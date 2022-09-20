@@ -37,6 +37,7 @@ class Header extends Component {
     render() {
         return (
             <>
+                {/* MAIN NAVBAR*/}
                 <Navbar light expand='md'>
                     <div className='container'>
                         <NavbarBrand className='mr-auto' href='/'>
@@ -75,6 +76,7 @@ class Header extends Component {
                 </Navbar>
                 <hr></hr>
                 <div className='container'>
+                    {/* SECONDARY NAVBAR */}
                     <Navbar expand='md'>
                         <Nav navbar className='ml-auto'>
                         <NavItem>
