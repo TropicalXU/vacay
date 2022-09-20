@@ -1,3 +1,7 @@
+.navlink {
+  color: darkgrey;
+}
+
 /* HOMEPAGE */
 .img-fluid {
   position: relative;
@@ -7,9 +11,20 @@
   box-shadow: 0 0 20px rgb(210, 210, 210);
 }
 
-.home-header-text {
+.home-header-title {
+  color: white;
+  font-weight: 700;
   top: 40%;
   position: absolute;
+  text-shadow: 0 0.05rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.home-header-text {
+  color: white;
+  font-weight: 700;
+  top: 50%;
+  position: absolute;
+  text-shadow: 0 0.05rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .home-header-btn {
@@ -17,8 +32,39 @@
   position: absolute;
 }
 
-.Modal {
+.modal {
   padding: 20px;
+}
+
+.card {
+  margin: 25px 20px 30px 20px;
+  padding: 20px;
+  width: 300px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgb(210, 210, 210);
+  display: flex;
+}
+
+.row-content {
+  display: flex;
+  justify-content: center;
+}
+
+.testemonial {
+  color: rgb(132, 132, 132);
+}
+
+.home-bottom {
+  color: white;
+  background-color: rgba(247, 115, 115, 0.845);
+  border-radius: 25px;
+  height: 400px;
+  box-shadow: 0 0 20px rgb(210, 210, 210);
+}
+
+.fa-ravelry {
+  font-size: 150px;
 }
 
 /* FOOTER */

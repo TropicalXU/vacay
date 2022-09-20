@@ -7,6 +7,7 @@ import Locations from './LocationsComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { LOCATIONS } from '../shared/locations';
+import {TESTEMONIALS} from '../shared/testemonials';
 
 
 class Main extends Component {
@@ -14,7 +15,8 @@ class Main extends Component {
         super(props);
 
         this.state = {
-            location: LOCATIONS
+            location: LOCATIONS,
+            testemonial: TESTEMONIALS
         }
 
     }
@@ -30,6 +32,9 @@ class Main extends Component {
                         <Home location1={this.state.location.filter((location) => location.featured)[0]} 
                               location2={this.state.location.filter((location) => location.featured)[1]}
                               location3={this.state.location.filter((location) => location.featured)[2]}
+                              testemonial1={this.state.testemonial.filter((testemonial) => testemonial.featured)[0]}
+                              testemonial2={this.state.testemonial.filter((testemonial) => testemonial.featured)[1]}
+                              testemonial3={this.state.testemonial.filter((testemonial) => testemonial.featured)[2]}
                         /> 
                     }/>
                     <Route exact path='/locations' component={ () => <Locations /> } />

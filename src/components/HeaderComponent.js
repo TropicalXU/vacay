@@ -65,7 +65,7 @@ class Header extends Component {
                                     </Button>
                                 </NavItem>
                                 <NavItem>
-                                    <Button outline onClick={this.toggleLoginModal}>
+                                    <Button className='ml-2' outline onClick={this.toggleLoginModal}>
                                         <span className='fa fa-sign-in fa-lg'></span>Login
                                     </Button>
                                 </NavItem>
