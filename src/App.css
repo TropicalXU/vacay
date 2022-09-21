@@ -1,9 +1,42 @@
+/* NAVBAR */
+a:link { text-decoration: none; }
+a:hover { 
+  color: white;
+  font-weight: 600; 
+}
+
+.font {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
 .navlink {
   color: darkgrey;
 }
 
+.modal-news {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: rgba(247, 115, 115, 0.845);
+  background-color: white;
+  padding: 45px;
+  border: 1px solid white;
+}
+
+
+.navbrand {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: rgb(255, 91, 91);
+}
+
+.register-btn {
+  background-color: rgb(255, 91, 91);
+  border: none;
+  box-shadow: 0 0 20px rgb(210, 210, 210);
+}
+
 .sticky-top {
-  top: 5%;
+  top: 3%;
 }
 
 /* HOMEPAGE */
@@ -16,25 +49,23 @@
 }
 
 .home-header {
+  font-family: 'Montserrat Alternates', sans-serif;
   width: 100%;
   height: 400px;
   border-radius: 25px;
   background-image: url('/public/assets/images/homeHeader.jpg');
   background-size: cover;
   background-position: center;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgb(210, 210, 210);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 } 
 
-/* .home-header-title {
-  color: white;
+.home-header-title {
   font-weight: 700;
   top: 40%;
-  position: absolute;
   text-shadow: 0 0.05rem 0.2rem rgba(0, 0, 0, 0.5);
-}  */
-
-.modal {
-  padding: 20px;
-}
+} 
 
 .card {
   margin: 25px 20px 30px 20px;
@@ -55,6 +86,7 @@
 }
 
 .home-bottom {
+  font-family: 'Montserrat Alternates', sans-serif;
   color: white;
   background-color: rgba(247, 115, 115, 0.845);
   border-radius: 25px;
@@ -66,9 +98,36 @@
   font-size: 150px;
 }
 
+/* LOCATION PAGE */
 .sidebar {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.newsletter {
+  font-family: 'Montserrat Alternates', sans-serif;
+  margin-top: 25px;
+  color: white;
+  background-color: rgb(255, 162, 162);
+  padding: 25px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 5px rgb(226, 226, 226);
+}
+
+/* LOCATION DETAIL */
+.breadcrumb {
+  background-color: rgb(255, 162, 162);
+  border-radius: 50px;
+  box-shadow: 0 0 5px rgb(226, 226, 226);
+}
+
+.breadcrumb-link {
+  color: white;
+}
+
+.text-white {
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 /* FOOTER */

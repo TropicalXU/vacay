@@ -82,7 +82,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 8,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -92,7 +92,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 9,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -102,7 +102,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 10,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -112,7 +112,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 11,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -122,7 +122,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 12,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -132,7 +132,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 13,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -142,7 +142,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 14,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -152,7 +152,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 15,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -162,7 +162,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 16,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -172,7 +172,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 17,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -182,7 +182,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 18,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -192,7 +192,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 19,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -202,7 +202,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 20,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -212,7 +212,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 21,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -222,7 +222,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 22,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',
@@ -232,7 +232,7 @@ export const LOCATIONS =
             owner: 'test'
         },
         {
-            id: 7,
+            id: 23,
             name: 'Mount Pearl',
             image: '/assets/images/cottage3.jpg',
             description: 'This is an amazing location',

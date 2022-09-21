@@ -10,7 +10,7 @@ class Footer extends Component {
                     <div className='col col-sm-4'>
                         <div className='row'>
                             <img src='/assets/images/logo.png' height='60' width='61' />
-                            <h4 className='px-3 pt-3'>VACAY</h4>
+                            <h4 className='navbrand px-3 pt-3'>vacay.</h4>
                         </div>
                     </div>
                     <div className='col col-sm-2'>

@@ -28,6 +28,7 @@ class BritishColumbia extends Component {
                         <SideNav />
                     </div>
                     <div className='col col-lg-8 offset-2'>
+                        <h1 className='font'>British Columbia</h1>
                         <div className='row'>
                             { BcLocations }
                         </div>

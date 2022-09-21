@@ -43,7 +43,7 @@ class Header extends Component {
                         <NavbarBrand className='mr-auto' href='/'>
                             <img src='assets/images/logo.png' height='50' width='51'
                                  alt='Ristorante Con Fusion Logo' 
-                            />  VACAY
+                            />  <span className='navbrand ml-3'>vacay.</span>
                         </NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
@@ -61,7 +61,7 @@ class Header extends Component {
                             </Nav>
                             <Nav navbar className='ml-auto'>
                                 <NavItem>
-                                    <Button color='primary' onClick={this.toggleRegisterModal}>
+                                    <Button className='register-btn' onClick={this.toggleRegisterModal}>
                                         Register
                                     </Button>
                                 </NavItem>
@@ -80,12 +80,12 @@ class Header extends Component {
                     <Navbar expand='md'>
                         <Nav navbar className='ml-auto'>
                         <NavItem>
-                            <NavLink className='nav-link' to='/about'>
+                            <NavLink className='nav-link text-dark' to='/about'>
                                 <span className='fa fa-info fa-lg'></span> About
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className='nav-link' to='/contact'>
+                            <NavLink className='nav-link text-dark' to='/contact'>
                                 <span className='fa fa-envelope-o fa-lg'></span> Contact
                             </NavLink>
                         </NavItem>
@@ -95,8 +95,8 @@ class Header extends Component {
 
                 {/* LOGIN MODAL */}
                 <Modal isOpen={this.state.isLoginModalOpen} toggle={this.toggleLoginModal} fade={false} className="col-12">
-				<ModalHeader toggle={this.toggleLoginModal}>Login</ModalHeader>
-				<ModalBody>
+				<ModalHeader className='modal-news' toggle={this.toggleLoginModal}>Login</ModalHeader>
+				<ModalBody className='modal-news'>
                     <Form onSubmit={this.handleLogin}>
                         <FormGroup>
                             <Label htmlFor='username'>Username</Label>
@@ -124,8 +124,8 @@ class Header extends Component {
 
             {/* REGISTER MODAL*/}
             <Modal isOpen={this.state.isRegisterModalOpen} toggle={this.toggleRegisterModal} fade={false} className="col-12">
-				<ModalHeader toggle={this.toggleRegisterModal}>Register</ModalHeader>
-				<ModalBody>
+				<ModalHeader className='modal-news' toggle={this.toggleRegisterModal}>Register</ModalHeader>
+				<ModalBody className='modal-news'>
                     <Form onSubmit={this.handleLogin}>
                         <FormGroup>
                             <Label htmlFor='firstname'>First Name</Label>

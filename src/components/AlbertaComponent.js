@@ -28,6 +28,7 @@ class Alberta extends Component {
                         <SideNav />
                     </div>
                     <div className='col col-lg-8 offset-2'>
+                        <h1 className='font'>Alberta</h1>
                         <div className='row'>
                             { AlbertaLocations }
                         </div>

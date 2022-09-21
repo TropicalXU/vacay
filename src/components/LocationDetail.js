@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem,
-    Button, Modal, ModalHeader, ModalBody, Row, Label, Col  } from 'reactstrap';
-    
+    Button, Modal, ModalHeader, ModalBody, Row, Label, Col  } from 'reactstrap';   
 import { Link } from 'react-router-dom';
+import { FadeTransform } from 'react-animation-components';
 
 function RenderLocation({location}) {
 
     if(location != null) {
         return (
             <div className='col-12 col-md-6 m-1'>
-                <Card>
-                    <CardImg src={location.image} width='490' height='200' />
-                    <CardBody>
-                        <CardTitle>{location.name}</CardTitle>
-                        <CardText>{location.description}</CardText>
-                        <h3>$ {location.price}</h3>
-                    </CardBody>
-                </Card>
+                <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.3) translateY(-20%)'
+                }}>
+                    <Card>
+                        <CardImg src={location.image} width='490' height='200' />
+                        <CardBody>
+                            <CardTitle>{location.name}</CardTitle>
+                            <CardText>{location.description}</CardText>
+                            <p><i>-{location.province}</i></p>
+                            <h3>$ {location.price}</h3>
+                            <p>per night</p>
+                        </CardBody>
+                    </Card>
+                </FadeTransform>
             </div>
         );
     }
@@ -68,11 +76,13 @@ const LocationDetail = (props) => {
         return (
             <div className='container mb-5'>
                 <div className='row'>
-                    <Breadcrumb>
+                    <Breadcrumb className='breadcrumb'>
                         <BreadcrumbItem>
-                            <Link to='/locations'>Locations</Link>
+                            <Link className='breadcrumb-link' to='/locations'>
+                                <span className='fa fa-chevron-left'></span> Back to Locations
+                            </Link>
                         </BreadcrumbItem>
-                        <BreadcrumbItem active>{props.location.name}
+                        <BreadcrumbItem active className='text-white'>{props.location.name}
                         </BreadcrumbItem>
                         </Breadcrumb>
                     <div className='col-12'>

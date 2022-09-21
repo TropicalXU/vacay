@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {
-    Navbar, Nav, NavbarToggler, Collapse, NavItem, Card, Button, CardBody, CardTitle, CardText} from 'reactstrap';
+    Navbar, Nav, NavbarToggler, Collapse, NavItem, Card, Button,
+     CardBody, CardTitle, CardText, Modal, ModalHeader, ModalBody,
+    Form, FormGroup, Label, Input} from 'reactstrap';
 import { RenderCard, RenderContact, SideNav } from '../functionalComponents/functionalComponents'
 
 
@@ -10,8 +12,10 @@ class Locations extends Component {
         
         this.state = {
             isNavOpen: false,
+            isModalOpen: false
         };
         this.toggleNav = this.toggleNav.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
     toggleNav() {
         this.setState({
@@ -19,92 +23,60 @@ class Locations extends Component {
         });
     }
 
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+          });
+    }
+
 
     render() {
-         
-        // function RenderContact() {
-        //     return (
-        //         <div className='container'>
-        //             <div className='row row-content home-bottom align-items-center my-5'>
-        //             <span className='fa fa-ravelry fa-lg'></span>
-        //             <h1 className='ml-5'>Get in touch</h1>
-        //             <Button className='ml-5 btn-lg' color='light'>Contact</Button>
-        //             </div>
-        //         </div>
-        //     )
-        // }
-
-
-        // function SideNav(props) {
-        //     return (
-        //         <Card className='sidebar sticky-top'>
-        //             <Navbar sticky dark expand='md'>
-        //                 <div className='container'>
-                            
-        //                         <Nav navbar>
-        //                             <div className='col'>
-        //                                 <NavItem>
-        //                                     <h4>Featured</h4>
-        //                                 </NavItem>
-        //                                 <div className='row'>
-        //                                 <NavItem className='my-3'>
-        //                                     <NavLink to='/home'>
-        //                                     Home
-        //                                     </NavLink>
-        //                                 </NavItem>
-        //                                 </div>
-        //                                 <div className='row'>
-        //                                     <NavItem className='py-3'>
-        //                                         <NavLink to='/locations/ontario' className='btn btn-light'>Ontario</NavLink>
-        //                                     </NavItem>
-        //                                     <NavItem className='py-3'>
-        //                                         <NavLink to='/locations/british-columbia' className='btn btn-light'>British Columbia</NavLink>
-        //                                     </NavItem>
-        //                                 </div>
-        //                                 <div className='row'>
-        //                                     <NavItem className='py-3'>
-        //                                         <NavLink to='/locations/alberta' className='btn btn-light'>Alberta</NavLink>
-        //                                     </NavItem>
-        //                                     <NavItem className='py-3 pl-2'>
-        //                                         <NavLink to='/locations/quebec' className='btn btn-light'>Quebec</NavLink>
-        //                                     </NavItem>
-        //                                 </div>
-        //                                 <NavItem className='my-3'>
-        //                                     <NavLink to='/about'>
-        //                                     Info
-        //                                     </NavLink>
-        //                                 </NavItem>
-        //                                 <NavItem>
-        //                                     <NavLink to='/contact'>
-        //                                     Contact
-        //                                     </NavLink> 
-        //                                 </NavItem>
-        //                             </div>  
-        //                         </Nav>
-                          
-        //                 </div>
-        //             </Navbar>
-        //         </Card>
-        //     );
-        // }
+      
         const location = this.props.location;
         const locations = location.map((location) => {
-            return(
-              <div key={location.id}>
-                <RenderCard location={location}  />
-              </div>
-            );
+            if(location != null) {
+                return(
+                <div key={location.id}>
+                    <RenderCard location={location}  />
+                </div>
+                );
+            }
+            else {
+                return (
+                    <div></div>
+                );
+            }
       });
 
         return (
             <div className='container-fluid'>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} fade={false} className="col-12 modal-main">
+                    <ModalHeader className='modal-news' toggle={this.toggleModal}>Sign up!</ModalHeader>
+                    <ModalBody className='modal-news'>
+                        <Form onSubmit={this.handleLogin}>
+                          <FormGroup>
+                            <Label htmlFor='name'>Name</Label>
+                            <Input type='text' id='name' name='name'
+                             innerRef={(input) => this.name = input}
+                             placeholder='Name'/>
+                          </FormGroup> 
+                          <FormGroup>
+                            <Label htmlFor='name'>Email</Label>
+                            <Input type='text' id='email' name='email'
+                             innerRef={(input) => this.email = input}
+                             placeholder='Email'/>
+                          </FormGroup>
+                          <Button type='submit' color='primary'>Sign up</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
                 <div className='row'>
                     <div className='col col-sm-2'>
-                        <SideNav />
+                        <SideNav onClick={this.toggleModal} />
                     </div>
                     <div className='col col-lg-8 offset-2'>
                         <div className=''>
-                            <h1>Featured Locations</h1>
+                            <h1 className='font'>Featured Locations</h1>
                             <div className='row'>
                                 {locations}
                             </div>

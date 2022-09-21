@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button} from 'reactstrap';
-import { Link } from 'react-router-dom';
+    CardTitle, CardSubtitle, Button, Modal, ModalHeader, ModalBody, Form, FormGroup,
+    Label, Input
+} from 'reactstrap';
+import { NavLink } from 'react-router-dom';
 import { RenderCard, RenderTestemonials } from '../functionalComponents/functionalComponents'
 
 
 class Home extends Component  {
     constructor(props) {
         super(props);
+        this.state = {
+            isModalOpen: false
+        };
+        this.toggleModal = this.toggleModal.bind(this);
        
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+          });
     }
 
     render() {
@@ -19,52 +31,37 @@ class Home extends Component  {
                     <div className='row text-center text-white'>
                     <div className='col'>
                         <h1 className='home-header-title'>Check out our amazing locations!</h1>
-                        <h3 className='home-header-text'>Cottage trips made easy with VACAY.</h3>
-                        <Button className='home-header-btn' color='primary'>View locations</Button>
+                        <h3 className='home-header-text my-3'>Cottage trips made easy with <span className='navbrand'>vacay</span>.</h3>
+                        <NavLink className='home-header-btn btn btn-dark'to='/locations'>View locations</NavLink>
                         </div>
                     </div>
                 </div>
-            )
+            );
         }
-
-        {/* HOMEPAGE - FEATURED CARDS */}
-        // function RenderCard({location}) {
-        //     return (
-        //         <Card className='text-center'>
-        //             <CardImg src={location.image} width='40' height='200'/>
-        //             <CardBody>
-        //                 <CardTitle>{location.name}</CardTitle>
-        //                 <CardText>{location.description}</CardText>
-        //                 <h3>$ {location.price}</h3>
-        //             </CardBody>
-        //             <Link className='btn btn-primary' to={`/locations/${location.id}`}>
-        //                View
-        //             </Link>
-        //         </Card>
-        //     );
-        // }
-
-        {/*HOMEPAGE - FEATURED TESTEMONIALS */}
-        // function RenderTestemonials({testemonial}) {
-        //     return (
-        //         <Card className='testemonial'>
-        //             <CardBody>
-        //                 <span className='fa fa-quote-left'></span>
-        //                 <CardText className='py-3'>{testemonial.comment}</CardText>
-        //                 <CardText> <i>- {testemonial.author},</i></CardText>
-        //                 <CardText>
-        //                     {new Intl.DateTimeFormat('en-US',
-        //                     {year: 'numeric',
-        //                     month: 'short',
-        //                     day: '2-digit'}).format(new Date(Date.parse(testemonial.date)))}
-        //                 </CardText>
-        //             </CardBody>
-        //         </Card>
-        //     )
-        // }
-
+    
         return (
+         
             <div className="container">
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} fade={false} className="col-12">
+                    <ModalHeader className='modal-news' toggle={this.toggleModal}>Sign up!</ModalHeader>
+                    <ModalBody className='modal-news'>
+                        <Form onSubmit={this.handleLogin}>
+                          <FormGroup>
+                            <Label htmlFor='name'>Name</Label>
+                            <Input type='text' id='name' name='name'
+                             innerRef={(input) => this.name = input}
+                             placeholder='Name'/>
+                          </FormGroup> 
+                          <FormGroup>
+                            <Label htmlFor='name'>Email</Label>
+                            <Input type='text' id='email' name='email'
+                             innerRef={(input) => this.email = input}
+                             placeholder='Email'/>
+                          </FormGroup>
+                          <Button type='submit' color='primary'>Sign up</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
                 <div className="row row-content">
                     <HomeHeader />
                 </div>
@@ -73,18 +70,24 @@ class Home extends Component  {
                   <RenderCard location={this.props.location2} />
                   <RenderCard location={this.props.location3} />
                 </div>
-                <div className='row row-content my-3'>
+                <div className='row newsletter my-3 py-5'>
+                    <div className='col-12'>
+                        <h2>Sign up for our newsletter!</h2>
+                        <Button color='primary' onClick={this.toggleModal}>Sign up</Button>
+                    </div>
+                </div>
+                <div className='row row-content my-5'>
                     <RenderTestemonials testemonial={this.props.testemonial1} />
                     <RenderTestemonials testemonial={this.props.testemonial2} />
                     <RenderTestemonials testemonial={this.props.testemonial3} />
                 </div>
-                <div className='row row-content home-bottom align-items-center my-5'>
+                <div className='row row-content home-bottom align-items-center mt-3 mb-5'>
                     <span className='fa fa-ravelry fa-lg'></span>
                     <h1 className='ml-5'>Ready to dive in...</h1>
-                    <Button className='ml-5 btn-lg' color='light'>Get Started</Button>
+                    <Button className='ml-5 btn-lg' color='primary'>Get Started</Button>
                 </div>
             </div>
-        )
+        );
     }
 }
 

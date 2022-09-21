@@ -28,6 +28,7 @@ class Quebec extends Component {
                         <SideNav />
                     </div>
                     <div className='col col-lg-8 offset-2'>
+                        <h1 className='font'>Quebec</h1>
                         <div className='row'>
                             { QuebecLocations }
                         </div>

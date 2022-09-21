@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { SideNav, RenderContact, RenderCard } from '../functionalComponents/functionalComponents';
 
 class Ontario extends Component {
-    
+
     render() {
         const locations = this.props.location;
         const ontarioLocations = locations.map((location) => {
@@ -28,6 +28,7 @@ class Ontario extends Component {
                         <SideNav />
                     </div>
                     <div className='col col-lg-8 offset-2'>
+                        <h1 className='font'>Ontario</h1>
                         <div className='row'>
                             {ontarioLocations}
                         </div>
