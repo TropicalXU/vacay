@@ -47,7 +47,7 @@ class Footer extends Component {
                 <hr></hr>
                 <div className='row mt-2'>
                     <div className='col col-sm-6'>
-                        <p>@Copyright</p>
+                        <p>@Copyright vacay 2022. All rights reserved.</p>
                     </div>
                     <div className='col col-sm-3'>
                         <p>Terms & Conditions</p>

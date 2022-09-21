@@ -80,8 +80,8 @@ class Header extends Component {
                     <Navbar expand='md'>
                         <Nav navbar className='ml-auto'>
                         <NavItem>
-                            <NavLink className='nav-link text-dark' to='/about'>
-                                <span className='fa fa-info fa-lg'></span> About
+                            <NavLink className='nav-link text-dark ml-3' to='/about'>
+                                <span className='fa fa-info-circle fa-lg'></span> About
                             </NavLink>
                         </NavItem>
                         <NavItem>

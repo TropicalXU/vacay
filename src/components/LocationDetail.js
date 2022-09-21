@@ -54,7 +54,7 @@ function RenderReviews({comments, locationId}) {
     if(comments != null) {
         return (
             <div className='col-12 col-md-3 m-1'>
-                <h4>Reviews</h4>
+                <h4 className='font'>Reviews</h4>
                 <ul className='list-unstyled'>
                     {reviews}  
                 </ul>
@@ -86,7 +86,7 @@ const LocationDetail = (props) => {
                         </BreadcrumbItem>
                         </Breadcrumb>
                     <div className='col-12'>
-                        <h3>{props.location.name}</h3>
+                        <h3 className='font'>{props.location.name}</h3>
                         <hr />
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import {
     Navbar, Nav, NavbarToggler, Collapse, NavItem, Card, Button,
      CardBody, CardTitle, CardText, Modal, ModalHeader, ModalBody,
     Form, FormGroup, Label, Input} from 'reactstrap';
-import { RenderCard, RenderContact, SideNav } from '../functionalComponents/functionalComponents'
+import { RenderCard, RenderContact, RenderTestemonials, SideNav } from '../functionalComponents/functionalComponents'
 
 
 class Locations extends Component {
@@ -76,9 +76,11 @@ class Locations extends Component {
                     </div>
                     <div className='col col-lg-8 offset-2'>
                         <div className=''>
-                            <h1 className='font'>Featured Locations</h1>
+                            <h3 className='font'>Featured Locations</h3>
                             <div className='row'>
                                 {locations}
+                                <RenderTestemonials testemonial={this.props.testemonial1}  />
+                                <RenderTestemonials testemonial={this.props.testemonial3}  />
                             </div>
                         </div>
                     </div>

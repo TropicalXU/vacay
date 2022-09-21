@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SideNav, RenderContact, RenderCard } from '../functionalComponents/functionalComponents';
+import { SideNav, RenderContact, RenderTestemonials, RenderCard } from '../functionalComponents/functionalComponents';
 
 class Ontario extends Component {
 
@@ -28,9 +28,11 @@ class Ontario extends Component {
                         <SideNav />
                     </div>
                     <div className='col col-lg-8 offset-2'>
-                        <h1 className='font'>Ontario</h1>
+                        <h3 className='font'>Ontario</h3>
                         <div className='row'>
                             {ontarioLocations}
+                            <RenderTestemonials testemonial={this.props.testemonial1} />
+                            <RenderTestemonials testemonial={this.props.testemonial2} />
                         </div>
                     </div>
                 </div>
