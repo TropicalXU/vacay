@@ -8,9 +8,9 @@ function RenderLocation({location}) {
 
     if(location != null) {
         return (
-            <div className='col-12 col-md-5 m-1'>
+            <div className='col-12 col-md-6 m-1'>
                 <Card>
-                    <CardImg src={location.image} width='70' height='200' />
+                    <CardImg src={location.image} width='490' height='200' />
                     <CardBody>
                         <CardTitle>{location.name}</CardTitle>
                         <CardText>{location.description}</CardText>
@@ -45,7 +45,7 @@ function RenderReviews({comments, locationId}) {
 
     if(comments != null) {
         return (
-            <div className='col-12 col-md-5 m-1'>
+            <div className='col-12 col-md-3 m-1'>
                 <h4>Reviews</h4>
                 <ul className='list-unstyled'>
                     {reviews}  
@@ -66,7 +66,7 @@ const LocationDetail = (props) => {
 
     if(location != null) {
         return (
-            <div className='container'>
+            <div className='container mb-5'>
                 <div className='row'>
                     <Breadcrumb>
                         <BreadcrumbItem>

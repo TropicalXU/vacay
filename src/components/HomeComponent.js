@@ -15,12 +15,13 @@ class Home extends Component  {
         {/* HOMEPAGE HEADER */}
         function HomeHeader() {
             return (
-                <div className='container my-3'>
-                    <div className='row justify-content-center'>
-                        <img src='/assets/images/homeHeader.jpg' className='img-fluid' />
+                <div className='container home-header d-flex justify-content-center align-items-center my-3'>
+                    <div className='row text-center text-white'>
+                    <div className='col'>
                         <h1 className='home-header-title'>Check out our amazing locations!</h1>
                         <h3 className='home-header-text'>Cottage trips made easy with VACAY.</h3>
                         <Button className='home-header-btn' color='primary'>View locations</Button>
+                        </div>
                     </div>
                 </div>
             )

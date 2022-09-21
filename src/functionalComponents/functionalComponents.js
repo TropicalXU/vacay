@@ -11,7 +11,9 @@ export const RenderCard = ({location}) => {
             <CardBody>
                 <CardTitle>{location.name}</CardTitle>
                 <CardText>{location.description}</CardText>
+                <p><i>-{location.province}</i></p>
                 <h3>$ {location.price}</h3>
+                <p>per night</p>
             </CardBody>
             <Link className='btn btn-primary' to={`/locations/${location.id}`}>
                View
@@ -52,6 +54,7 @@ export const RenderContact = () => {
 
 export const SideNav = () => {
     return (
+        <>
         <Card className='sidebar sticky-top'>
             <Navbar sticky dark expand='md'>
                 <div className='container'>
@@ -98,5 +101,6 @@ export const SideNav = () => {
                 </div>
             </Navbar>
         </Card>
+        </>
     );
 }
