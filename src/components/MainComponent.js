@@ -4,6 +4,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Locations from './LocationsComponent';
+import LocationDetail from './LocationDetail';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Ontario from './OntarioComponent';
@@ -30,6 +31,38 @@ class Main extends Component {
         // const HomePage = () => {
         //     <Home />
         // }
+        const OntarioFeatured = (location) => {
+            return (
+                <Ontario location={this.state.location.filter((location) => location.province === 'Ontario')} />
+            );
+        }
+
+        const BcFeatured = () => {
+            return (
+                <BritishColumbia location={this.state.location.filter((location) => location.province === 'British Columbia')} />
+            );
+        }
+
+        const AlbertaFeatured = () => {
+            return (
+                <Alberta location={this.state.location.filter((location) => location.province === 'Alberta')} />
+            );
+        }
+
+        const QuebecFeatured = () => {
+            return (
+                <Quebec location={this.state.location.filter((location) => location.province === 'Quebec')} />
+            );
+        }
+
+        const LocationWithId = ({match}) => {
+            return (
+                <LocationDetail
+                location={this.state.location.filter((location) => location.id === parseInt(match.params.locationId, 10))[0]}
+                comments={this.state.comments.filter((comments) => comments.locationId === parseInt(match.params.locationId, 10))}
+                 />
+            );
+        }
         return (
             // MAIN ROUTES
             <div>
@@ -44,18 +77,19 @@ class Main extends Component {
                               testemonial3={this.state.testemonial.filter((testemonial) => testemonial.featured)[2]}
                         /> 
                     }/>
-                    <Route exact path='/locations' component={ () => <Locations /> } />
-                    <Route exact path='/locations/ontario' component={ () => <Ontario />} />
-                    <Route exact path='/locations/british-columbia' component={ () => <BritishColumbia />} />
-                    <Route exact path='/locations/alberta' component={ () => <Alberta />} />
-                    <Route exact path='/locations/quebec' component={ () => <Quebec />} />
+                    <Route exact path='/locations' component={ () => <Locations location={this.state.location} /> } />
+                    <Route exact path='/locations/ontario' component={ OntarioFeatured } />
+                    <Route exact path='/locations/british-columbia' component={ BcFeatured } />
+                    <Route exact path='/locations/alberta' component={ AlbertaFeatured } />
+                    <Route exact path='/locations/quebec' component={ QuebecFeatured } />
+                    <Route exact path='/locations/:locationId' component={ LocationWithId } />
                     <Route exact path='/about' component={ () => <About /> } />
                     <Route exact path='/contact' component={ () => <Contact /> } />
                     <Redirect to='/home' />
                 </Switch>
                 <Footer />
             </div>
-        )
+        );
     }
 }
 

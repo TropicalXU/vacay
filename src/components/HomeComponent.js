@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { RenderCard, RenderTestemonials } from '../functionalComponents/functionalComponents'
 
 
 class Home extends Component  {
@@ -26,40 +27,40 @@ class Home extends Component  {
         }
 
         {/* HOMEPAGE - FEATURED CARDS */}
-        function RenderCard({location}) {
-            return (
-                <Card className='text-center'>
-                    <CardImg src={location.image} width='40' height='200'/>
-                    <CardBody>
-                        <CardTitle>{location.name}</CardTitle>
-                        <CardText>{location.description}</CardText>
-                        <h3>$ {location.price}</h3>
-                    </CardBody>
-                    <Link className='btn btn-primary' to={`/locations/${location.id}`}>
-                       View
-                    </Link>
-                </Card>
-            )
-        }
+        // function RenderCard({location}) {
+        //     return (
+        //         <Card className='text-center'>
+        //             <CardImg src={location.image} width='40' height='200'/>
+        //             <CardBody>
+        //                 <CardTitle>{location.name}</CardTitle>
+        //                 <CardText>{location.description}</CardText>
+        //                 <h3>$ {location.price}</h3>
+        //             </CardBody>
+        //             <Link className='btn btn-primary' to={`/locations/${location.id}`}>
+        //                View
+        //             </Link>
+        //         </Card>
+        //     );
+        // }
 
         {/*HOMEPAGE - FEATURED TESTEMONIALS */}
-        function RenderTestemonials({testemonial}) {
-            return (
-                <Card className='testemonial'>
-                    <CardBody>
-                        <span className='fa fa-quote-left'></span>
-                        <CardText className='py-3'>{testemonial.comment}</CardText>
-                        <CardText> <i>- {testemonial.author},</i></CardText>
-                        <CardText>
-                            {new Intl.DateTimeFormat('en-US',
-                            {year: 'numeric',
-                            month: 'short',
-                            day: '2-digit'}).format(new Date(Date.parse(testemonial.date)))}
-                        </CardText>
-                    </CardBody>
-                </Card>
-            )
-        }
+        // function RenderTestemonials({testemonial}) {
+        //     return (
+        //         <Card className='testemonial'>
+        //             <CardBody>
+        //                 <span className='fa fa-quote-left'></span>
+        //                 <CardText className='py-3'>{testemonial.comment}</CardText>
+        //                 <CardText> <i>- {testemonial.author},</i></CardText>
+        //                 <CardText>
+        //                     {new Intl.DateTimeFormat('en-US',
+        //                     {year: 'numeric',
+        //                     month: 'short',
+        //                     day: '2-digit'}).format(new Date(Date.parse(testemonial.date)))}
+        //                 </CardText>
+        //             </CardBody>
+        //         </Card>
+        //     )
+        // }
 
         return (
             <div className="container">
@@ -87,3 +88,4 @@ class Home extends Component  {
 }
 
 export default Home;
+
