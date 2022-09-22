@@ -70,7 +70,7 @@ function RenderReviews({comments, locationId}) {
 }
 
 const LocationDetail = (props) => {
-    const location = props.location;
+    const location = props.locations;
 
     if(location != null) {
         return (
@@ -82,18 +82,20 @@ const LocationDetail = (props) => {
                                 <span className='fa fa-chevron-left'></span> Back to Locations
                             </Link>
                         </BreadcrumbItem>
-                        <BreadcrumbItem active className='text-white'>{props.location.name}
+                        <BreadcrumbItem active className='text-white'>{props.locations.name}
                         </BreadcrumbItem>
                         </Breadcrumb>
                     <div className='col-12'>
-                        <h3 className='font'>{props.location.name}</h3>
+                        <h3 className='font'>{props.locations.name}</h3>
                         <hr />
                     </div>
                 </div>
                 <div className='row my-3'>
-                       <RenderLocation location={props.location} />
+                       <RenderLocation location={props.locations}
+                       isLoading={props.locationsLoading}
+                       errMsg={props.locationsErrMsg}  />
                        <RenderReviews comments={props.comments}
-                        locationId={props.location.id} />
+                        locationId={props.locations.id} />
                     </div>
             </div>
         );

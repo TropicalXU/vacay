@@ -3,11 +3,25 @@ import { Navbar, Nav, NavItem, Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { Loading } from '../components/LoadingComponent';
 import { FadeTransform } from 'react-animation-components';
 
-export const RenderCard = ({location}) => {
-
-    if(location != null) {
+export const RenderCard = ({location, isLoading, errMsg}) => {
+    if(isLoading) {
+        return (
+            <Loading />
+        );
+    }
+    else if (errMsg) {
+        return (
+            <div className='container'>
+                <div className='row'>
+                    <h4>{errMsg}</h4>
+                </div>
+            </div>
+        )
+    }
+    else {
         return (
             <FadeTransform
                 in
@@ -28,11 +42,6 @@ export const RenderCard = ({location}) => {
                     </Link>
                 </Card>
             </FadeTransform>
-        );
-    }
-    else {
-        return (
-            <div></div>
         );
     }
 }

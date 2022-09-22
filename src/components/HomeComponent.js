@@ -24,6 +24,7 @@ class Home extends Component  {
     }
 
     render() {
+        
         {/* HOMEPAGE HEADER */}
         function HomeHeader() {
             return (
@@ -38,6 +39,7 @@ class Home extends Component  {
                 </div>
             );
         }
+
     
         return (
          
@@ -66,9 +68,18 @@ class Home extends Component  {
                     <HomeHeader />
                 </div>
                 <div className='row my-5 row-content my-3'>
-                  <RenderCard location={this.props.location1} />
-                  <RenderCard location={this.props.location2} />
-                  <RenderCard location={this.props.location3} />
+                  <RenderCard location={this.props.location1}
+                    isLoading={this.props.locationsLoading}
+                    errMsg={this.props.locationsErrMsg} 
+                    />
+                  <RenderCard location={this.props.location2}
+                     isLoading={this.props.locationsLoading}
+                     errMsg={this.props.locationsErrMsg}
+                  />
+                  <RenderCard location={this.props.location3}
+                    isLoading={this.props.locationsLoading}
+                    errMsg={this.props.locationsErrMsg}
+                    />
                 </div>
                 <div className='row newsletter my-3 py-5'>
                     <div className='col-12'>

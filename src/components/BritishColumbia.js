@@ -9,7 +9,9 @@ class BritishColumbia extends Component {
             if(location.province === 'British Columbia') {
                 return (
                     <div key={location.id}>
-                        <RenderCard location={location} />
+                        <RenderCard location={location}
+                        isLoading={this.props.locationsLoading}
+                        errMsg={this.props.locationsErrMsg} />
                     </div>
                 );
             }
@@ -24,7 +26,7 @@ class BritishColumbia extends Component {
         return (
             <div className='container-fluid'>
                 <div className='row'>
-                    <div className='col col-sm-2'>
+                    <div className='col col-sm-2 offset-1 offset-md-0'>
                         <SideNav />
                     </div>
                     <div className='col col-lg-8 offset-2'>

@@ -11,11 +11,12 @@ export const addReview = (locationId, rating, author, review) => ({
     }
 });
 
+
 export const fetchLocations = () => (dispatch) => {
     dispatch(locationsLoading(true));
 
     setTimeout(() => {
-        dispatch((LOCATIONS));
+        dispatch(addLocations(LOCATIONS));
     }, 2000);
 }
 
@@ -26,5 +27,11 @@ export const locationsLoading = () => ({
 export const locationsFailed = (errMsg) => ({
     type: ActionTypes.LOCATIONS_FAILED,
     payload: errMsg
-})
+});
+
+export const addLocations = (locations) => ({
+    type: ActionTypes.ADD_LOCATIONS,
+    payload: locations
+});
+
 

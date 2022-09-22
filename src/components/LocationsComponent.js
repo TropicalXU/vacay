@@ -32,20 +32,17 @@ class Locations extends Component {
 
     render() {
       
-        const location = this.props.location;
+        const location = this.props.locations;
         const locations = location.map((location) => {
-            if(location != null) {
+       
                 return(
                 <div key={location.id}>
-                    <RenderCard location={location}  />
+                    <RenderCard location={location}
+                    isLoading={location.locationsLoading}
+                    errMsg={location.locationsErrMsg}   />
                 </div>
-                );
-            }
-            else {
-                return (
-                    <div></div>
-                );
-            }
+               
+                )
       });
 
         return (
@@ -71,10 +68,10 @@ class Locations extends Component {
                     </ModalBody>
                 </Modal>
                 <div className='row'>
-                    <div className='col col-sm-2'>
+                    <div className='col col-sm-2 offset-1 offset-md-0'>
                         <SideNav onClick={this.toggleModal} />
                     </div>
-                    <div className='col col-lg-8 offset-2'>
+                    <div className='col col-md-8 offset-md-2'>
                         <div className=''>
                             <h3 className='font'>Featured Locations</h3>
                             <div className='row'>
