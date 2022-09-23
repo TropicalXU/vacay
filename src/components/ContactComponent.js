@@ -18,9 +18,13 @@ class Contact extends Component {
         
         return (
             //CONTACT FORM
-            <div className='container align-items-center'>
+            <div className='container contact-form align-items-center'>
+                <h3 className='font my-5'>Contact Us</h3>
                 <div className='row'>
-                    <div className='col col-sm-8'>
+                    <div className='col-12 col-sm-6 py-3'>
+                        <img src='/assets/images/logo.png' className='img-fluid' />
+                    </div>
+                    <div className='col-12 col-sm-6 py-3'>
                         <LocalForm>
                             <Row className='form-group'>
                                 <Label htmlFor='firstname'>First Name</Label>
@@ -37,7 +41,7 @@ class Contact extends Component {
                                     model='.firstname'
                                     show='touched'
                                     messages={{
-                                        required: 'Required',
+                                        required: 'Required! ',
                                          minLength: 'Must be greater than two characters!',
                                         maxLength: 'Must be 15 characters or less!'
                                     }} 
@@ -58,7 +62,7 @@ class Contact extends Component {
                                     model='.lastname'
                                     show='touched'
                                     messages={{
-                                        required: 'Required',
+                                        required: 'Required! ',
                                         minLength: 'Must be greater than two characters!',
                                         maxLength: 'Must be 15 characters or less!'
                                     }} 
@@ -97,7 +101,7 @@ class Contact extends Component {
                             <Row className='form-group'>
                                 <Label htmlFor='message'>Your Feedback</Label>
                                 <Control.textarea model='.message' id='message' name='message' 
-                                    rows='12'
+                                    rows='8'
                                     className='form-control' 
                                 />
                             </Row>

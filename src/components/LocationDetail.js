@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
     Button, Modal, ModalHeader, ModalBody, Row, Label, Col  } from 'reactstrap';   
 import { Link } from 'react-router-dom';
 import { FadeTransform } from 'react-animation-components';
+import ReviewForm from './ReviewFormComponent';
 
 function RenderLocation({location}) {
 
@@ -40,7 +41,7 @@ function RenderReviews({comments, locationId}) {
     const reviews = comments.map(comment => {
         return (
             <li key={comment.id}>
-                <p>{comment.comment}</p>
+                <p>{comment.review}</p>
                 <p> --<i>{comment.author}</i>, &nbsp;
                 {new Intl.DateTimeFormat('en-US',
                         {year: 'numeric',
@@ -58,7 +59,7 @@ function RenderReviews({comments, locationId}) {
                 <ul className='list-unstyled'>
                     {reviews}  
                 </ul>
-                   {/* <CommentForm disId={locationId} /> */}
+                  <ReviewForm />
             </div>
         );
     }
