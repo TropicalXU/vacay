@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavItem, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button} from 'reactstrap';
+    CardTitle, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Loading } from '../components/LoadingComponent';
@@ -72,6 +72,55 @@ export const RenderTestemonials = ({testemonial}) => {
     }
 }
 
+export const RenderHostCard = ({host}) => {
+    return (
+        <Card className='text-center'>
+            <CardImg />
+            <CardBody>
+                <img src={host.image} width='70' height='70' className='my-3' />
+                <CardTitle>{host.name}</CardTitle>
+                <CardText><span className='fa fa-star'></span><b> {host.rating}</b> Stars</CardText>
+                <CardText>{host.description}</CardText>
+            </CardBody>
+        </Card>
+    )
+}
+
+export const RenderNewsletter = ({onClick, isOpen, toggle, onSubmit, name, email}) => {
+    return (
+        <>  <div className='row newsletter my-3 py-5'>
+                <div className='col-12'>
+                    <h2 className='font'>Sign up for our newsletter!</h2>
+                    <Button color='primary' onClick={onClick}>Sign up</Button>
+                </div>
+            </div>
+
+            <div className="container">
+                <Modal isOpen={isOpen} toggle={toggle} fade={false} className="col-12">
+                    <ModalHeader className='modal-news' toggle={toggle}>Sign up!</ModalHeader>
+                    <ModalBody className='modal-news'>
+                        <Form onSubmit={onSubmit}>
+                            <FormGroup>
+                                <Label htmlFor='name'>Name</Label>
+                                <Input type='text' id='name' name='name'
+                                innerRef={(input) => (name) = input}
+                                placeholder='Name'/>
+                            </FormGroup> 
+                            <FormGroup>
+                            <Label htmlFor='name'>Email</Label>
+                                <Input type='text' id='email' name='email'
+                                innerRef={(input) => (email) = input}
+                                placeholder='Email'/>
+                            </FormGroup>
+                            <Button type='submit' color='primary'>Sign up</Button>
+                        </Form>
+                    </ModalBody>
+                </Modal>
+            </div>
+        </>
+    );
+}
+
 export const RenderContact = () => {
     return (
         <div className='container'>
@@ -97,10 +146,10 @@ export const SideNav = ({onClick}) => {
                             </NavItem>
                             <div className='row'>
                                 <NavItem className='py-3'>
-                                    <NavLink to='/locations/ontario' className='btn btn-light'>Ontario</NavLink>
+                                    <NavLink to='/locations/ontario' className='btn btn-light ml-2'>Ontario</NavLink>
                                 </NavItem>
                                 <NavItem className='py-3'>
-                                    <NavLink to='/locations/british-columbia' className='btn btn-light ml-1'>British Columbia</NavLink>
+                                    <NavLink to='/locations/british-columbia' className='btn btn-light'>British Columbia</NavLink>
                                 </NavItem>
                             </div>
                             <div className='row'>

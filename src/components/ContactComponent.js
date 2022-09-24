@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import { RenderNewsletter } from '../functionalComponents/functionalComponents';
 
 //checks to see if the value is greater than 0
 const required = (val) => val && val.length;
@@ -13,16 +14,44 @@ const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Contact extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isModalOpen: false
+        };
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+          });
+    }
+
+    handleSubmit(evt) {
+        this.toggleModal();
+        alert('Name: ' + this.name.value + 'Email:' + this.email.value);
+        evt.preventDefault();
+    }
   
     render() {
         
         return (
             //CONTACT FORM
             <div className='container contact-form align-items-center'>
+                <RenderNewsletter 
+                    onClick={this.toggleModal}
+                    isOpen={this.state.isModalOpen}
+                    toggle={this.toggleModal}
+                    onSubmit={this.handleSubmit}
+                    name={this.name}
+                    email={this.email}
+                />
                 <h3 className='font my-5'>Contact Us</h3>
-                <div className='row'>
-                    <div className='col-12 col-sm-6 py-3'>
-                        <img src='/assets/images/logo.png' className='img-fluid' />
+                <div className='row row-bg'>
+                    <div className='col-12 col-sm-6 d-flex justify-content-center align-items-center'>
+                        <img src='/assets/images/mail.png' width='250' height='250' />
                     </div>
                     <div className='col-12 col-sm-6 py-3'>
                         <LocalForm>

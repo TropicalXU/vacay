@@ -42,7 +42,7 @@ class Header extends Component {
                     <div className='container'>
                         <NavbarBrand className='mr-auto' href='/'>
                             <img src='assets/images/logo.png' height='50' width='51'
-                                 alt='Ristorante Con Fusion Logo' 
+                                 alt='Vacay Logo' 
                             />  <span className='navbrand ml-3'>vacay.</span>
                         </NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />

@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware} from 'redux';
 import { Locations } from './locations';
 import { Reviews } from './reviews';
 import { Testemonials } from './testemonials';
+import { Hosts } from './hosts';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
@@ -10,7 +11,8 @@ export const ConfigureStore = () => {
         combineReducers({
             locations: Locations,
             reviews: Reviews,
-            testemonials: Testemonials
+            testemonials: Testemonials,
+            hosts: Hosts
         }),
         applyMiddleware(thunk, logger)
     );

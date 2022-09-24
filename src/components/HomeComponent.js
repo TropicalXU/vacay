@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button, Modal, ModalHeader, ModalBody, Form, FormGroup,
-    Label, Input
-} from 'reactstrap';
+import { Button} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { RenderCard, RenderTestemonials } from '../functionalComponents/functionalComponents'
+import { RenderCard, RenderTestemonials, RenderHostCard, RenderNewsletter } from '../functionalComponents/functionalComponents'
 
 
 class Home extends Component  {
@@ -14,6 +11,7 @@ class Home extends Component  {
             isModalOpen: false
         };
         this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
        
     }
 
@@ -21,6 +19,12 @@ class Home extends Component  {
         this.setState({
             isModalOpen: !this.state.isModalOpen
           });
+    }
+
+    handleSubmit(evt) {
+        this.toggleModal();
+        alert('Name: ' + this.name.value + 'Email:' + this.email.value);
+        evt.preventDefault();
     }
 
     render() {
@@ -44,26 +48,6 @@ class Home extends Component  {
         return (
          
             <div className="container">
-                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} fade={false} className="col-12">
-                    <ModalHeader className='modal-news' toggle={this.toggleModal}>Sign up!</ModalHeader>
-                    <ModalBody className='modal-news'>
-                        <Form onSubmit={this.handleLogin}>
-                          <FormGroup>
-                            <Label htmlFor='name'>Name</Label>
-                            <Input type='text' id='name' name='name'
-                             innerRef={(input) => this.name = input}
-                             placeholder='Name'/>
-                          </FormGroup> 
-                          <FormGroup>
-                            <Label htmlFor='name'>Email</Label>
-                            <Input type='text' id='email' name='email'
-                             innerRef={(input) => this.email = input}
-                             placeholder='Email'/>
-                          </FormGroup>
-                          <Button type='submit' color='primary'>Sign up</Button>
-                        </Form>
-                    </ModalBody>
-                </Modal>
                 <div className="row row-content">
                     <HomeHeader />
                 </div>
@@ -81,12 +65,24 @@ class Home extends Component  {
                     errMsg={this.props.locationsErrMsg}
                     />
                 </div>
-                <div className='row newsletter my-3 py-5'>
+                <div className='row justify-content-center my-5'>
+                    <h3 className='font'>Meet Our Top Hosts</h3>
                     <div className='col-12'>
-                        <h2>Sign up for our newsletter!</h2>
-                        <Button color='primary' onClick={this.toggleModal}>Sign up</Button>
+                        <div className='row justify-content-center'>
+                            <RenderHostCard host={this.props.host1} />
+                            <RenderHostCard host={this.props.host2} />
+                            <RenderHostCard host={this.props.host3} />
+                        </div>
                     </div>
                 </div>
+                <RenderNewsletter 
+                    onClick={this.toggleModal}
+                    isOpen={this.state.isModalOpen}
+                    toggle={this.toggleModal}
+                    onSubmit={this.handleSubmit}
+                    name={this.name}
+                    email={this.email}
+                />
                 <div className='row row-content my-5'>
                     <RenderTestemonials testemonial={this.props.testemonial1} />
                     <RenderTestemonials testemonial={this.props.testemonial2} />

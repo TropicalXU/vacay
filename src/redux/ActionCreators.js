@@ -1,6 +1,7 @@
 import * as ActionTypes from './ActionTypes';
 import { LOCATIONS } from '../shared/locations';
 import { REVIEWS } from '../shared/reviews';
+import { HOSTS } from '../shared/hosts';
 
 export const addReview = (review) => ({
     type: ActionTypes.ADD_REVIEW,
@@ -47,8 +48,6 @@ export const postReview = (locationId, rating, author, review) => (dispatch) => 
     
 };
 
-
-
 export const fetchLocations = () => (dispatch) => {
     dispatch(locationsLoading(true));
 
@@ -56,6 +55,22 @@ export const fetchLocations = () => (dispatch) => {
         dispatch(addLocations(LOCATIONS));
     }, 2000);
 }
+
+export const fetchReviews = () => (dispatch) => {
+    dispatch(reviewsLoading(true));
+
+    setTimeout(() => {
+        dispatch(REVIEWS);
+    }, 2000);
+}
+
+export const reviewsLoading = () => ({
+    type: ActionTypes.REVIEWS_LOADING
+})
+
+export const reviewsFailed = (errMsg) => ({
+    type: ActionTypes.REVIEWS_FAILED
+})
 
 export const locationsLoading = () => ({
     type: ActionTypes.LOCATIONS_LOADING

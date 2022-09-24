@@ -19,7 +19,8 @@ const mapSateToProps = state => {
     return {
         locations: state.locations,
         reviews: state.reviews,
-        testemonials: state.testemonials
+        testemonials: state.testemonials,
+        hosts: state.hosts
     }
 }
 
@@ -28,7 +29,9 @@ const mapDispatchToProps = (dispatch) => ({
 
     fetchLocations: () => {
         dispatch(fetchLocations())
-    }
+    },
+
+   
 });
 
 
@@ -52,6 +55,9 @@ class Main extends Component {
                         testemonial1={this.props.testemonials.filter((testemonial) => testemonial.featured)[0]}
                         testemonial2={this.props.testemonials.filter((testemonial) => testemonial.featured)[1]}
                         testemonial3={this.props.testemonials.filter((testemonial) => testemonial.featured)[2]}
+                        host1={this.props.hosts.filter((host) => host.featured)[0]}
+                        host2={this.props.hosts.filter((host) => host.featured)[1]}
+                        host3={this.props.hosts.filter((host) => host.featured)[2]}
                         locationsLoading={this.props.locations.isLoading}
                         locationsErrMsg={this.props.locations.errMsg}
                 /> 
@@ -107,12 +113,13 @@ class Main extends Component {
             return (
                 <LocationDetail
                 locations={this.props.locations.locations.filter((location) => location.id === parseInt(match.params.locationId, 10))[0]}
-                comments={this.props.reviews.filter((review) => review.locationId === parseInt(match.params.locationId, 10))}
+                comments={this.props.reviews.reviews.filter((review) => review.locationId === parseInt(match.params.locationId, 10))}
                 locationsLoading={this.props.locations.isLoading}
                 locationsErrMsg={this.props.locations.errMsg}
                  />
             );
         };
+        
 
         return (
             // MAIN ROUTES
@@ -132,7 +139,9 @@ class Main extends Component {
                     <Route exact path='/locations/alberta' component={ AlbertaFeatured } />
                     <Route exact path='/locations/quebec' component={ QuebecFeatured } />
                     <Route exact path='/locations/:locationId' component={ LocationWithId } />
-                    <Route exact path='/about' component={ () => <About /> } />
+                    <Route exact path='/about' component={ () => <About host1={this.props.hosts.filter((host) => host.featured)[0]}
+                        host2={this.props.hosts.filter((host) => host.featured)[1]} 
+                        host3={this.props.hosts.filter((host) => host.featured)[2]} /> } />
                     <Route exact path='/contact' component={ () => <Contact /> } />
                     <Redirect to='/home' />
                 </Switch>
