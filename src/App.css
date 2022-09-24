@@ -30,7 +30,7 @@ a:hover {
   font-family: 'Montserrat Alternates', sans-serif;
   color: rgba(247, 115, 115, 0.845);
   background-color: white;
-  padding: 45px;
+  padding: 25px;
   border: 1px solid white;
 }
 
@@ -143,6 +143,11 @@ a:hover {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.review {
+  border: 1px solid lightgrey;
+  border-radius: 15px;
+}
+
 /* FOOTER */
 .footer {
   background-color: rgb(239, 239, 239);
@@ -151,5 +156,13 @@ a:hover {
   max-height: 500px;
   display: flex;
   align-items: center;
+}
 
+.list-unstyled {
+  font-size: 14px;
+  color: rgb(159, 159, 159);
+}
+
+.footer h5 {
+  color: rgb(118, 118, 118);
 }

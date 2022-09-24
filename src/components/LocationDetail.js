@@ -9,7 +9,7 @@ function RenderLocation({location}) {
 
     if(location != null) {
         return (
-            <div className='col-12 col-md-6 m-1'>
+            <div className='col-12 col-sm-12 col-md-5 d-flex justify-content-center'>
                 <FadeTransform
                 in
                 transformProps={{
@@ -37,28 +37,31 @@ function RenderLocation({location}) {
     
 }
 
-function RenderReviews({comments, locationId}) {
-    const reviews = comments.map(comment => {
+function RenderReviews({reviews}) {
+    const rev = reviews.map(review => {
         return (
-            <li key={comment.id}>
-                <p>{comment.review}</p>
-                <p> --<i>{comment.author}</i>, &nbsp;
+            <li key={review.id}>
+                <p><span className='fa fa-star'></span><b> {review.rating}</b> Stars</p>
+                <p>{review.review}</p>
+                <p> --<i><b>{review.author}</b></i>, &nbsp;
                 {new Intl.DateTimeFormat('en-US',
                         {year: 'numeric',
                         month: 'short',
-                        day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
+                        day: '2-digit'}).format(new Date(Date.parse(review.date)))}
                 </p>
             </li>
         );
     });
 
-    if(comments != null) {
+    if(reviews != null) {
         return (
-            <div className='col-12 col-md-3 m-1'>
+            <div className='col-12 col-sm-12 col-md-5 align-items-center'>
                 <h4 className='font'>Reviews</h4>
-                <ul className='list-unstyled'>
-                    {reviews}  
-                </ul>
+                <div className='review my-5'>
+                    <ul className='list-unstyled p-5'>
+                        {rev}  
+                    </ul>
+                </div>
                   <ReviewForm />
             </div>
         );
@@ -72,6 +75,7 @@ function RenderReviews({comments, locationId}) {
 
 const LocationDetail = (props) => {
     const location = props.locations;
+    const review = props.reviews;
 
     if(location != null) {
         return (
@@ -91,12 +95,11 @@ const LocationDetail = (props) => {
                         <hr />
                     </div>
                 </div>
-                <div className='row my-3'>
+                <div className='row'>
                        <RenderLocation location={props.locations}
-                       isLoading={props.locationsLoading}
-                       errMsg={props.locationsErrMsg}  />
-                       <RenderReviews comments={props.comments}
-                        locationId={props.locations.id} />
+                         />
+                       <RenderReviews reviews={props.reviews}
+                         />
                     </div>
             </div>
         );

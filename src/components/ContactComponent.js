@@ -49,11 +49,11 @@ class Contact extends Component {
                     email={this.email}
                 />
                 <h3 className='font my-5'>Contact Us</h3>
-                <div className='row row-bg'>
+                <div className='row'>
                     <div className='col-12 col-sm-6 d-flex justify-content-center align-items-center'>
                         <img src='/assets/images/mail.png' width='250' height='250' />
                     </div>
-                    <div className='col-12 col-sm-6 py-3'>
+                    <div className='col-12 col-sm-6 row-bg py-3'>
                         <LocalForm>
                             <Row className='form-group'>
                                 <Label htmlFor='firstname'>First Name</Label>

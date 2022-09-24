@@ -4,6 +4,7 @@ import {
     Button, Modal, ModalHeader, ModalBody, FormGroup, Form, Label, Input
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { RenderRegisterModal } from '../functionalComponents/functionalComponents';
 
 class Header extends Component {
     constructor(props) {
@@ -123,6 +124,7 @@ class Header extends Component {
 			</Modal>
 
             {/* REGISTER MODAL*/}
+            
             <Modal isOpen={this.state.isRegisterModalOpen} toggle={this.toggleRegisterModal} fade={false} className="col-12">
 				<ModalHeader className='modal-news' toggle={this.toggleRegisterModal}>Register</ModalHeader>
 				<ModalBody className='modal-news'>

@@ -86,6 +86,52 @@ export const RenderHostCard = ({host}) => {
     )
 }
 
+export const RenderRegisterModal = ({isOpen, toggle, onSubmit}) => {
+    return (
+        <>
+            <Modal isOpen={isOpen} toggle={toggle} fade={false} className="col-12">
+				<ModalHeader className='modal-news' toggle={toggle}>Register</ModalHeader>
+				<ModalBody className='modal-news'>
+                    <Form onSubmit={onSubmit}>
+                        <FormGroup>
+                            <Label htmlFor='firstname'>First Name</Label>
+                            <Input type='text' id='firstname' name='firstname'
+                            innerRef={(input) => this.firstname = input}
+                            placeholder='First Name'/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor='lastname'>Last Name</Label>
+                            <Input type='text' id='lastname' name='lastname'
+                            innerRef={(input) => this.lastname = input}
+                            placeholder='Last Name'/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor='email'>Email</Label>
+                            <Input type='email' id='email' name='email'
+                            innerRef={(input) => this.email = input}
+                            placeholder='Email'/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor='password'>Password</Label>
+                            <Input type='password' id='password' name='password'
+                            innerRef={(input) => this.password = input}
+                            />
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type='checkbox' name='remember'
+                                 innerRef={(input) => this.remember = input}/>
+                                Remember me
+                            </Label>
+                        </FormGroup>
+                        <Button type='submit' color='primary'>Register</Button>
+                    </Form>
+				</ModalBody>
+			</Modal>
+        </>
+    )
+}
+
 export const RenderNewsletter = ({onClick, isOpen, toggle, onSubmit, name, email}) => {
     return (
         <>  <div className='row newsletter my-3 py-5'>

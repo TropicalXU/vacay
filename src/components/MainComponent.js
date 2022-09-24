@@ -12,7 +12,7 @@ import Ontario from './OntarioComponent';
 import BritishColumbia from './BritishColumbia';
 import Alberta from './AlbertaComponent';
 import Quebec from './QuebecComponent';
-import { addReview, fetchLocations } from '../redux/ActionCreators';
+import { addReview, fetchLocations, fetchReviews } from '../redux/ActionCreators';
 
 
 const mapSateToProps = state => {
@@ -25,10 +25,14 @@ const mapSateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addReview: (locationId, rating, author, review) => dispatch(addReview(locationId, rating, author, review)),
+    // postReview: (locationId, rating, author, review) => dispatch(postReview(locationId, rating, author, review)),
 
     fetchLocations: () => {
         dispatch(fetchLocations())
+    },
+
+    fetchReviews: () => {
+        dispatch(fetchReviews())
     },
 
    
@@ -44,6 +48,7 @@ class Main extends Component {
     }
     componentDidMount() {
         this.props.fetchLocations();
+        this.props.fetchReviews();
     }
 
     render() {
@@ -113,9 +118,11 @@ class Main extends Component {
             return (
                 <LocationDetail
                 locations={this.props.locations.locations.filter((location) => location.id === parseInt(match.params.locationId, 10))[0]}
-                comments={this.props.reviews.reviews.filter((review) => review.locationId === parseInt(match.params.locationId, 10))}
+                reviews={this.props.reviews.reviews.filter((review) => review.locationId === parseInt(match.params.locationId, 10))}
                 locationsLoading={this.props.locations.isLoading}
                 locationsErrMsg={this.props.locations.errMsg}
+                postReview={this.props.postReview} 
+                reviewsErrMsg={this.props.reviews.errMsg}
                  />
             );
         };

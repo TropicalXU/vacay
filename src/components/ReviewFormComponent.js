@@ -26,23 +26,24 @@ class ReviewForm extends Component {
         });
     }
     handleSubmit(vals) {
-        this.toggleModal();
-        this.props.postComment(this.props.disId, vals.rating, vals.author, vals.comment)
+        console.log('Current State is:' + JSON.stringify(vals));
+        alert('Current State is:' + JSON.stringify(vals));
     }
 
     render() {
         return (
-            <>
+            <>  <div className='row my-3 ml-1'>
                 <Button color='secondary' onClick={this.toggleModal}>
                     <span className='fa fa-comments fa-lg'>
                         Submit Review
                     </span>
                 </Button>
+                </div>
 
                 <div className='container'>
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-                        <ModalHeader toggle={this.toggleModal}>Submit Review</ModalHeader>
-                        <ModalBody>
+                        <ModalHeader className='modal-news' toggle={this.toggleModal}>Submit Review</ModalHeader>
+                        <ModalBody className='modal-news'>
                             <LocalForm onSubmit={this.handleSubmit}>
                                 <Row className='form-group'>
                                     <Label htmlFor='rating' md={12}>Rating</Label>
@@ -56,6 +57,13 @@ class ReviewForm extends Component {
                                           <option>4</option>
                                           <option>5</option>
                                         </Control.select>
+                                        <Errors
+                                        className='text-danger'
+                                        model='.rating'
+                                        show='touched'
+                                        messages={{
+                                            required: 'Required!'
+                                        }} />
                                     </Col>
                                 </Row>
                                 <Row className='form-group'>
@@ -64,6 +72,19 @@ class ReviewForm extends Component {
                                         <Control.text model='.author' id='author' name='author'
                                         className='form-control'
                                         placeholder='Your Name'
+                                        validators={{
+                                            required, minLength: minLength(3), maxLength: maxLength(15)
+                                        }}
+                                        />
+                                        <Errors 
+                                        className='text-danger'
+                                        model='.author'
+                                        show='touched'
+                                        messages={{
+                                            required: 'Required! ',
+                                            minLength: 'Must be greater than two characters!',
+                                            maxLength: 'Must be 15 characters or less!'
+                                        }}
                                         />
                                     </Col>
                                 </Row>

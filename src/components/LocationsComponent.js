@@ -46,7 +46,7 @@ class Locations extends Component {
       });
 
         return (
-            <div className='container-fluid'>
+            <div className='container-fluid align-items-center'>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} fade={false} className="col-12 modal-main">
                     <ModalHeader className='modal-news' toggle={this.toggleModal}>Sign up!</ModalHeader>
                     <ModalBody className='modal-news'>
@@ -68,13 +68,13 @@ class Locations extends Component {
                     </ModalBody>
                 </Modal>
                 <div className='row'>
-                    <div className='col col-sm-2 offset-1 offset-md-0'>
+                    <div className='col-12 col-sm-12 col-md-2 offset-1 offset-md-0'>
                         <SideNav onClick={this.toggleModal} />
                     </div>
-                    <div className='col col-md-8 offset-md-2'>
+                    <div className='col-12 col-sm-12 col-md-10 col-lg-8 offset-md-1'>
                         <div className=''>
-                            <h3 className='font'>Featured Locations</h3>
-                            <div className='row'>
+                            <h3 className='font d-flex justify-content-center my-3'>Featured Locations</h3>
+                            <div className='row d-flex justify-content-center'>
                                 {locations}
                                 <RenderTestemonials testemonial={this.props.testemonial1}  />
                                 <RenderTestemonials testemonial={this.props.testemonial3}  />

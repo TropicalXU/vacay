@@ -91,7 +91,7 @@ class Home extends Component  {
                 <div className='row row-content home-bottom align-items-center mt-3 mb-5'>
                     <span className='fa fa-ravelry fa-lg'></span>
                     <h1 className='ml-5'>Ready to dive in...</h1>
-                    <Button className='ml-5 btn-lg' color='primary'>Get Started</Button>
+                    <Button onClick={this.toggleModal} className='ml-5 btn-lg' color='primary'>Get Started</Button>
                 </div>
             </div>
         );

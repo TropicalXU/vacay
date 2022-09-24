@@ -14,31 +14,34 @@ class Footer extends Component {
                         </div>
                     </div>
                     <div className='col col-sm-2'>
-                        <h5>Links</h5>
+                        <h5 className='font'>Home</h5>
                         <ul className='list-unstyled'>
                             <li>Home</li>
-                            <li>Home</li>
-                            <li>Home</li>
+                            <li>Locations</li>
+                            <li>About</li>
+                            <li>Contact</li>
                         </ul>
                     </div>
                     <div className='col col-sm-2'>
-                        <h5>Links</h5>
+                        <h5 className='font'>Locations</h5>
                         <ul className='list-unstyled'>
-                            <li>Home</li>
-                            <li>Home</li>
-                            <li>Home</li>
+                            <li>All Locations</li>
+                            <li>Ontario</li>
+                            <li>British Columbia</li>
+                            <li>Alberta</li>
+                            <li>Quebec</li>
                         </ul>
                     </div>
                     <div className='col col-sm-2'>
-                        <h5>Links</h5>
+                        <h5 className='font'>Comapny</h5>
                         <ul className='list-unstyled'>
-                            <li>Home</li>
-                            <li>Home</li>
-                            <li>Home</li>
+                            <li>About</li>
+                            <li>FAQ</li>
+                            <li>Contact</li>
                         </ul>
                     </div>
                     <div className='col col-sm-2 align-items-center'>
-                        <h5>Socials</h5>
+                        <h5 className='font'>Socials</h5>
                         <span className='fa fa-instagram fa-lg'></span>
                         <span className='fa fa-facebook fa-lg ml-2'></span>
                         <span className='fa fa-github fa-lg ml-2'></span>

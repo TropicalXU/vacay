@@ -57,19 +57,24 @@ export const fetchLocations = () => (dispatch) => {
 }
 
 export const fetchReviews = () => (dispatch) => {
-    dispatch(reviewsLoading(true));
+    
 
     setTimeout(() => {
-        dispatch(REVIEWS);
+        dispatch(addReviews(REVIEWS));
     }, 2000);
 }
 
-export const reviewsLoading = () => ({
-    type: ActionTypes.REVIEWS_LOADING
-})
+
 
 export const reviewsFailed = (errMsg) => ({
-    type: ActionTypes.REVIEWS_FAILED
+    type: ActionTypes.REVIEWS_FAILED,
+    payload: errMsg
+});
+
+export const addReviews = (reviews) => ({
+    type: ActionTypes.ADD_REVIEWS,
+    payload: reviews
+    
 })
 
 export const locationsLoading = () => ({
