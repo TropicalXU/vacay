@@ -32,7 +32,7 @@ export const RenderCard = ({location, isLoading, errMsg}) => {
                     <CardImg src={location.image} width='40' height='200'/>
                     <CardBody>
                         <CardTitle>{location.name}</CardTitle>
-                        <CardText>{location.description}</CardText>
+                        {/* <CardText>{location.description}</CardText> */}
                         <p><i>-{location.province}</i></p>
                         <hr></hr>
                         <h3>$ {location.price}</h3>

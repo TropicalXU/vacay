@@ -7,7 +7,7 @@ export const HOSTS =
             name: 'Sally Walker',
             image: '/assets/images/user.png',
             rating: 5,
-            description: 'test',
+            description: 'This host went above and beyond to provide guests with everything they need to make the stay comfortable.',
             featured: true
 
         },
@@ -17,7 +17,7 @@ export const HOSTS =
             name: 'John Jones',
             image: '/assets/images/user.png',
             rating: 5,
-            description: 'test',
+            description: 'The host made sure the property has everything you need. They clearly thought things through.',
             featured: true
 
         },
@@ -27,8 +27,8 @@ export const HOSTS =
             name: 'Samantha Grove',
             image: '/assets/images/user.png',
             rating: 5,
-            description: 'test',
+            description: 'Thank you to Samantha. We feel so privileged to have had the opportunity to stay in your beautiful quaint A frame cabin.',
             featured: true
 
-        },
+        }
     ]

@@ -21,6 +21,6 @@ export const TESTEMONIALS =
             featured: true,
             author: 'Izzie Stephens',
             date: '2021-10-05T17:57:28.556094Z'
-        },
+        }
        
     ]
