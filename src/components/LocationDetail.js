@@ -21,8 +21,11 @@ function RenderLocation({location}) {
                             <CardTitle>{location.name}</CardTitle>
                             <CardText>{location.description}</CardText>
                             <p><i>-{location.province}</i></p>
+                            <hr></hr>
                             <h3>$ {location.price}</h3>
                             <p>per night</p>
+                            <hr></hr>
+                            <p><b>Host:</b> {location.host}</p>
                         </CardBody>
                     </Card>
                 </FadeTransform>
@@ -57,7 +60,7 @@ function RenderReviews({reviews}) {
         return (
             <div className='col-12 col-sm-12 col-md-5 align-items-center'>
                 <h4 className='font'>Reviews</h4>
-                <div className='review my-5'>
+                <div className='box my-5'>
                     <ul className='list-unstyled p-5'>
                         {rev}  
                     </ul>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Footer extends Component {
     render() {
@@ -16,28 +17,26 @@ class Footer extends Component {
                     <div className='col col-sm-2'>
                         <h5 className='font'>Home</h5>
                         <ul className='list-unstyled'>
-                            <li>Home</li>
-                            <li>Locations</li>
-                            <li>About</li>
-                            <li>Contact</li>
+                            <li><NavLink to='/home'>Home</NavLink></li>
+                            <li><NavLink to='/locations'>Locations</NavLink></li>
+                            <li><NavLink to='/about'>About</NavLink></li>
+                            <li><NavLink to='/contact'>Contact</NavLink></li>
                         </ul>
                     </div>
                     <div className='col col-sm-2'>
                         <h5 className='font'>Locations</h5>
                         <ul className='list-unstyled'>
-                            <li>All Locations</li>
-                            <li>Ontario</li>
-                            <li>British Columbia</li>
-                            <li>Alberta</li>
-                            <li>Quebec</li>
+                            <li><NavLink to='/locations/ontario'>Ontario</NavLink></li>
+                            <li><NavLink to='/locations/british-columbia'>British Columbia</NavLink></li>
+                            <li><NavLink to='/locations/alberta'>Alberta</NavLink></li>
+                            <li><NavLink to='/locations/quebec'>Quebec</NavLink></li>
                         </ul>
                     </div>
                     <div className='col col-sm-2'>
-                        <h5 className='font'>Comapny</h5>
+                        <h5 className='font'>Legal</h5>
                         <ul className='list-unstyled'>
-                            <li>About</li>
-                            <li>FAQ</li>
-                            <li>Contact</li>
+                            <li>Terms</li>
+                            <li>Privacy</li>
                         </ul>
                     </div>
                     <div className='col col-sm-2 align-items-center'>

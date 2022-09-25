@@ -51,12 +51,12 @@ class Header extends Component {
                             <Nav navbar className='ml-auto'>
                             <NavItem>
                                 <NavLink className='nav-link' to='/home'>
-                                    <span className='fa fa-home fa-lg'></span> Home
+                                    <span className='fa fa-home fa-lg'></span> <span className='font'>Home</span>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className='nav-link' to='/locations'>
-                                    <span className='fa fa-location-arrow fa-lg'></span> Locations
+                                    <span className='fa fa-location-arrow fa-lg'></span> <span className='font'>Locations</span>
                                 </NavLink>
                             </NavItem>
                             </Nav>

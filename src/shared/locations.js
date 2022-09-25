@@ -9,7 +9,7 @@ export const LOCATIONS =
             province: 'Ontario',
             featured: true,
             price: 105,
-            owner: 'test'
+            host: 'Justine Loft'
         },
         {
             id: 1,
@@ -19,7 +19,7 @@ export const LOCATIONS =
             province: 'British Columbia',
             featured: true,
             price: 120,
-            owner: 'test'
+            host: 'Michael Simms'
         },
         {
             id: 2,
@@ -29,7 +29,7 @@ export const LOCATIONS =
             province: 'Alberta',
             featured: true,
             price: 95,
-            owner: 'test'
+            host: 'Sean Delaney'
         },
         {
             id: 3,
@@ -39,7 +39,7 @@ export const LOCATIONS =
             province: 'Quebec',
             featured: true,
             price: 89,
-            owner: 'test'
+            host: 'Audrey Lomaine'
         },
         {
             id: 4,
@@ -49,7 +49,7 @@ export const LOCATIONS =
             province: 'Ontario',
             featured: true,
             price: 115,
-            owner: 'test'
+            host: 'Harry Tomlinson'
         },
         {
             id: 5,
@@ -59,7 +59,7 @@ export const LOCATIONS =
             province: 'British Columbia',
             featured: true,
             price: 100,
-            owner: 'test'
+            host: 'Sarah Lively'
         },
         {
             id: 6,
@@ -69,7 +69,7 @@ export const LOCATIONS =
             province: 'Alberta',
             featured: true,
             price: 95,
-            owner: 'test'
+            host: 'Jack Albert'
         },
         {
             id: 7,
@@ -79,7 +79,7 @@ export const LOCATIONS =
             province: 'Quebec',
             featured: true,
             price: 99,
-            owner: 'test'
+            host: 'Suzanne Evans'
         },
         {
             id: 8,
@@ -89,7 +89,7 @@ export const LOCATIONS =
             province: 'Ontario',
             featured: true,
             price: 125,
-            owner: 'test'
+            host: 'Justine Holt'
         },
         {
             id: 9,
@@ -99,7 +99,7 @@ export const LOCATIONS =
             province: 'British Columbia',
             featured: true,
             price: 75,
-            owner: 'test'
+            host: 'Tom Harris'
         },
         {
             id: 10,
@@ -109,7 +109,7 @@ export const LOCATIONS =
             province: 'Alberta',
             featured: true,
             price: 88,
-            owner: 'test'
+            host: 'Izzie Stephens'
         },
         {
             id: 11,
@@ -119,7 +119,7 @@ export const LOCATIONS =
             province: 'Quebec',
             featured: true,
             price: 90,
-            owner: 'test'
+            host: 'Julie Greene'
         },
         {
             id: 12,
@@ -129,7 +129,7 @@ export const LOCATIONS =
             province: 'Ontario',
             featured: true,
             price: 112,
-            owner: 'test'
+            host: 'Mark Jordan'
         },
         {
             id: 13,
@@ -139,7 +139,7 @@ export const LOCATIONS =
             province: 'British Columbia',
             featured: true,
             price: 99,
-            owner: 'test'
+            host: 'Samuel Finch'
         },
         {
             id: 14,
@@ -149,7 +149,7 @@ export const LOCATIONS =
             province: 'Alberta',
             featured: true,
             price: 89,
-            owner: 'test'
+            host: 'Gabrielle Fuller'
         },
         {
             id: 15,
@@ -159,7 +159,7 @@ export const LOCATIONS =
             province: 'Quebec',
             featured: true,
             price: 108,
-            owner: 'test'
+            host: 'Jack Gills'
         },
         {
             id: 16,
@@ -169,7 +169,7 @@ export const LOCATIONS =
             province: 'Ontario',
             featured: true,
             price: 78,
-            owner: 'test'
+            host: 'Samantha Guerra'
         },
         {
             id: 17,
@@ -179,7 +179,7 @@ export const LOCATIONS =
             province: 'British Columbia',
             featured: true,
             price: 85,
-            owner: 'test'
+            host: 'Warren Wilson'
         },
         {
             id: 18,
@@ -189,7 +189,7 @@ export const LOCATIONS =
             province: 'Alberta',
             featured: true,
             price: 100,
-            owner: 'test'
+            host: 'Tim Malone'
         },
         {
             id: 19,
@@ -199,7 +199,7 @@ export const LOCATIONS =
             province: 'Quebec',
             featured: true,
             price: 110,
-            owner: 'test'
+            host: 'Terry Willis'
         },
         {
             id: 20,
@@ -209,7 +209,7 @@ export const LOCATIONS =
             province: 'Ontario',
             featured: true,
             price: 90,
-            owner: 'test'
+            host: 'Teresa Rogers'
         },
         {
             id: 21,
@@ -219,7 +219,7 @@ export const LOCATIONS =
             province: 'British Columbia',
             featured: true,
             price: 65,
-            owner: 'test'
+            host: 'Ron Mason'
         },
         {
             id: 22,
@@ -229,7 +229,7 @@ export const LOCATIONS =
             province: 'Alberta',
             featured: true,
             price: 74,
-            owner: 'test'
+            host: 'Gary Darcy'
         },
         {
             id: 23,
@@ -239,7 +239,7 @@ export const LOCATIONS =
             province: 'Quebec',
             featured: true,
             price: 89,
-            owner: 'test'
+            host: 'Julie Bolt'
         },
     ]
    

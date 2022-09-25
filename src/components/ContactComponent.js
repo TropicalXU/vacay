@@ -40,21 +40,24 @@ class Contact extends Component {
         return (
             //CONTACT FORM
             <div className='container contact-form align-items-center'>
-                <RenderNewsletter 
+                {/* <RenderNewsletter 
                     onClick={this.toggleModal}
                     isOpen={this.state.isModalOpen}
                     toggle={this.toggleModal}
                     onSubmit={this.handleSubmit}
                     name={this.name}
                     email={this.email}
-                />
-                <h3 className='font my-5'>Contact Us</h3>
-                <div className='row'>
-                    <div className='col-12 col-sm-6 d-flex justify-content-center align-items-center'>
-                        <img src='/assets/images/mail.png' width='250' height='250' />
+                />            */}
+                <h3 className='font my-5 text-center'>Contact Us</h3>
+                <div className='row row-content'>
+                    <div className='col-12 col-sm-12 col-md-5 text-center mt-5'>
+                        <img src='/assets/images/mail.png' width='350' height='350' />
+                        <h2 className='font py-5'>Have any questions?</h2>
+                        <h5 className='font'>Our specialists are ready at hand to answer any of your questions or concerns!</h5>
+                        <p className='font py-5'>We provide 24/7 support. Our teams are ready to answer your queries.</p>
                     </div>
-                    <div className='col-12 col-sm-6 row-bg py-3'>
-                        <LocalForm>
+                    <div className='col-12 col-sm-12 col-md-12 col-lg-6 offset-md-1 row-bg py-3'>
+                        <LocalForm className=' p-5'>
                             <Row className='form-group'>
                                 <Label htmlFor='firstname'>First Name</Label>
                                 <Control.text model='.firstname' id='firstname' name='firstname' 
@@ -140,6 +143,14 @@ class Contact extends Component {
                                  </Button>
                             </Row>
                         </LocalForm>
+                    </div>
+                </div>
+                <h2 className='font text-center my-5'>Frequently Asked Questions</h2>
+                <div className='row row-content'>
+                    <div className='col-12'>
+                        <div className='py-5'>
+                            
+                        </div>
                     </div>
                 </div>
             </div>

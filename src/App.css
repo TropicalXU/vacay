@@ -143,9 +143,13 @@ a:hover {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.review {
+.box {
   border: 1px solid lightgrey;
   border-radius: 15px;
+}
+
+.contact-forms {
+  background-color: rgb(255, 162, 162);
 }
 
 /* FOOTER */

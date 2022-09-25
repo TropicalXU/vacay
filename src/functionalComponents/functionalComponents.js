@@ -34,8 +34,11 @@ export const RenderCard = ({location, isLoading, errMsg}) => {
                         <CardTitle>{location.name}</CardTitle>
                         <CardText>{location.description}</CardText>
                         <p><i>-{location.province}</i></p>
+                        <hr></hr>
                         <h3>$ {location.price}</h3>
                         <p>per night</p>
+                        <hr></hr>
+                        <p><b>Host:</b> {location.host}</p>
                     </CardBody>
                     <Link className='btn btn-info' to={`/locations/${location.id}`}>
                     View
@@ -158,7 +161,7 @@ export const RenderNewsletter = ({onClick, isOpen, toggle, onSubmit, name, email
                                 innerRef={(input) => (email) = input}
                                 placeholder='Email'/>
                             </FormGroup>
-                            <Button type='submit' color='primary'>Sign up</Button>
+                            <Button type='submit' color='info'>Sign up</Button>
                         </Form>
                     </ModalBody>
                 </Modal>
@@ -191,6 +194,9 @@ export const SideNav = ({onClick}) => {
                                 <h4><span className='fa fa-star-o fa-lg'></span> Featured</h4>
                             </NavItem>
                             <div className='row'>
+                            <NavItem className='py-3'>
+                                    <NavLink to='/locations' className='btn btn-light'>All Locations</NavLink>
+                                </NavItem>
                                 <NavItem className='py-3'>
                                     <NavLink to='/locations/ontario' className='btn btn-light ml-2'>Ontario</NavLink>
                                 </NavItem>
@@ -223,7 +229,7 @@ export const SideNav = ({onClick}) => {
                             </NavItem>
                             <NavItem className='newsletter py-3'>
                                 <h4>Sign up for our newsletter!</h4>
-                                <Button onClick={onClick} className='my-2' color='primary'>Sign up!</Button>
+                                <Button onClick={onClick} className='my-2' color='info'>Sign up!</Button>
                             </NavItem>
                         </div>  
                     </Nav>

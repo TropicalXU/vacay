@@ -12,7 +12,7 @@ import Ontario from './OntarioComponent';
 import BritishColumbia from './BritishColumbia';
 import Alberta from './AlbertaComponent';
 import Quebec from './QuebecComponent';
-import { addReview, fetchLocations, fetchReviews } from '../redux/ActionCreators';
+import { addReview, fetchLocations, fetchReviews, postReview } from '../redux/ActionCreators';
 
 
 const mapSateToProps = state => {
@@ -25,7 +25,7 @@ const mapSateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    // postReview: (locationId, rating, author, review) => dispatch(postReview(locationId, rating, author, review)),
+    postReview: (locationId, rating, author, review) => dispatch(postReview(locationId, rating, author, review)),
 
     fetchLocations: () => {
         dispatch(fetchLocations())
@@ -40,12 +40,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
 
-       
-
-    }
     componentDidMount() {
         this.props.fetchLocations();
         this.props.fetchReviews();

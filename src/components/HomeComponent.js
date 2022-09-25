@@ -83,6 +83,7 @@ class Home extends Component  {
                     name={this.name}
                     email={this.email}
                 />
+                <h1 className='font text-center pt-5'>Testemonials</h1>
                 <div className='row row-content my-5'>
                     <RenderTestemonials testemonial={this.props.testemonial1} />
                     <RenderTestemonials testemonial={this.props.testemonial2} />
@@ -91,7 +92,7 @@ class Home extends Component  {
                 <div className='row row-content home-bottom align-items-center mt-3 mb-5'>
                     <span className='fa fa-ravelry fa-lg'></span>
                     <h1 className='ml-5'>Ready to dive in...</h1>
-                    <Button onClick={this.toggleModal} className='ml-5 btn-lg' color='primary'>Get Started</Button>
+                    <Button onClick={this.toggleRegisterModal} className='ml-5 btn-lg' color='primary'>Get Started</Button>
                 </div>
             </div>
         );
