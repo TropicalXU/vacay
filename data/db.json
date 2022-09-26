@@ -1,0 +1,462 @@
+{
+    "locations": [
+        {
+            "id": 0,
+            "name": "Blue Mountains",
+            "image": "images/cottage1.jpg",
+            "description": "Nestled amongst the trees, this tiny cabin features a living area, tiny library, wood stove, sofa bed and kitchenette on the main floor with a queen size bed, night side tables and a dresser in the loft above.",
+            "province": "Ontario",
+            "featured": true,
+            "price": 105,
+            "host": "Justine Loft"
+        },
+        {
+            "id": 1,
+            "name": "Alpine Lakes",
+            "image": "images/cottage2.jpg",
+            "description": "A beautiful private lakefront cottage with 3 bedrooms and family room lake views. The perfect mini get away.",
+            "province": "British Columbia",
+            "featured": true,
+            "price": 120,
+            "host": "Michael Simms"
+        },
+        {
+            "id": 2,
+            "name": "Spruce Grove",
+            "image": "images/cottage3.jpg",
+            "description": "The cottage has a full kitchen with a spacious sit down eating area and includes dishes and cookware. The family room is roomy and comfortable with a beautiful view of the lake.",
+            "province": "Alberta",
+            "featured": true,
+            "price": 95,
+            "host": "Sean Delaney"
+        },
+        {
+            "id": 3,
+            "name": "Maple Ridge",
+            "image": "images/cottage4.jpg",
+            "description": "Watch the sun rise and set in this cozy lake front cottage.",
+            "province": "Quebec",
+            "featured": true,
+            "price": 89,
+            "host": "Audrey Lomaine"
+        },
+        {
+            "id": 4,
+            "name": "Richmond Hill",
+            "image": "images/cottage5.jpg",
+            "description": "Nestled on a private, 17 acre property with pond & trees is adjacent to golf course and wetlands, this stunning, cottage-like home offers all of the modern conveniences with natural views from every window.",
+            "province": "Ontario",
+            "featured": true,
+            "price": 115,
+            "host": "Harry Tomlinson"
+        },
+        {
+            "id": 5,
+            "name": "Victoria Heights",
+            "image": "images/cottage6.jpg",
+            "description": "Let cabin fever go and breathe in the fresh mountain air at this 2-bedroom, 2-bath vacation rental home.",
+            "province": "British Columbia",
+            "featured": true,
+            "price": 100,
+            "host": "Sarah Lively"
+        },
+        {
+            "id": 6,
+            "name": "Silent River",
+            "image": "images/cottage7.jpg",
+            "description": "Hide away or make it your base for endless excursions: 3 min to the private-access beach, skiing & snowboarding.",
+            "province": "Alberta",
+            "featured": false,
+            "price": 95,
+            "host": "Jack Albert"
+        },
+        {
+            "id": 7,
+            "name": "Mount Pearl",
+            "image": "images/cottage8.jpg",
+            "description": "A rustic cabin getaway with all the comforts of home. This is the perfect location to either have the ultimate outdoor experience or just stay cozy inside and enjoy the rustic ambiance.",
+            "province": "Quebec",
+            "featured": false,
+            "price": 99,
+            "host": "Suzanne Evans"
+        },
+        {
+            "id": 8,
+            "name": "Rusty Hills",
+            "image": "images/cottage9.jpg",
+            "description": "Relax, unwind, listen to birds and watch the trees sway in the breeze. Gaze at the brilliant night sky, put a log on the fire.",
+            "province": "Ontario",
+            "featured": true,
+            "price": 125,
+            "host": "Justine Holt"
+        },
+        {
+            "id": 9,
+            "name": "Lake Rishmoore",
+            "image": "images/cottage10.jpg",
+            "description": "Unique A-frame cabin in private setting. Loft bedroom upstairs and open floor plan on ground floor. Large wrap around deck with covered area for grilling or just hanging out.",
+            "province": "British Columbia",
+            "featured": true,
+            "price": 75,
+            "host": "Tom Harris"
+        },
+        {
+            "id": 10,
+            "name": "River Pheonix",
+            "image": "images/cottage11.jpg",
+            "description": "Our cozy chalet is the perfect escape for you and your loved ones. Bring the whole family to this great place with lots of room for fun.",
+            "province": "Alberta",
+            "featured": true,
+            "price": 88,
+            "host": "Izzie Stephens"
+        },
+        {
+            "id": 11,
+            "name": "Lake Alk",
+            "image": "images/cottage12.jpg",
+            "description": "Beautiful four season cottage home nestled away on four private wooded acres on the quiet South river water way leading to Forest lake .",
+            "province": "Quebec",
+            "featured": true,
+            "price": 90,
+            "host": "Julie Greene"
+        },
+        {
+            "id": 12,
+            "name": "Hillgrove",
+            "image": "images/cottage13.jpg",
+            "description": "We invite you to taaake it easy by the lake. Where contemporary style meets thoughtful accents, like coffee, tea and biscuits.",
+            "province": "Ontario",
+            "featured": false,
+            "price": 112,
+            "host": "Mark Jordan"
+        },
+        {
+            "id": 13,
+            "name": "Mount Rhine",
+            "image": "images/cottage14.jpg",
+            "description": "This 4 star cottage is perfect for longer stays as it features a full kitchen and a deck for BBQs.",
+            "province": "British Columbia",
+            "featured": false,
+            "price": 99,
+            "host": "Samuel Finch"
+        },
+        {
+            "id": 14,
+            "name": "Lake Ree",
+            "image": "images/cottage15.jpg",
+            "description": "You won’t forget your time in this romantic, memorable place. Please be advised that it’s a pet free property.",
+            "province": "Alberta",
+            "featured": false,
+            "price": 89,
+            "host": "Gabrielle Fuller"
+        },
+        {
+            "id": 15,
+            "name": "Oak Wood",
+            "image": "images/cottage16.jpg",
+            "description": "Beautiful Open Concept Waterfront Home with large sunk in living room wth stone wood burning fire place, Hot Tub on Lakeside Deck.",
+            "province": "Quebec",
+            "featured": true,
+            "price": 108,
+            "host": "Jack Gills"
+        },
+        {
+            "id": 16,
+            "name": "Lake Somm",
+            "image": "images/cottage17.jpg",
+            "description": "Lovely suite with its own 3 piece bathroom, living room with flat screen TV and kitchenette.",
+            "province": "Ontario",
+            "featured": true,
+            "price": 78,
+            "host": "Samantha Guerra"
+        },
+        {
+            "id": 17,
+            "name": "Winding Terrace",
+            "image": "images/cottage18.jpg",
+            "description": "Newly built custom luxury cottage, with brand new beds, mattress, furniture and furnishings.",
+            "province": "British Columbia",
+            "featured": false,
+            "price": 85,
+            "host": "Warren Wilson"
+        },
+        {
+            "id": 18,
+            "name": "Oak River",
+            "image": "images/cottage19.jpg",
+            "description": "Forget your worries in this spacious and serene space. Breathtaking sunset views right on the lake.",
+            "province": "Alberta",
+            "featured": true,
+            "price": 100,
+            "host": "Tim Malone"
+        },
+        {
+            "id": 19,
+            "name": "Lake Ridge",
+            "image": "images/cottage20.jpg",
+            "description": "Relax with the whole family at this peaceful place to stay.",
+            "province": "Quebec",
+            "featured": true,
+            "price": 110,
+            "host": "Terry Willis"
+        },
+        {
+            "id": 20,
+            "name": "Creek Wood",
+            "image": "images/cottage21.jpg",
+            "description": "Enjoy your morning coffee while watching the morning sunrise on the lake. ",
+            "province": "Ontario",
+            "featured": true,
+            "price": 90,
+            "host": "Teresa Rogers"
+        },
+        {
+            "id": 21,
+            "name": "Woodbine Avenue",
+            "image": "images/cottage22.jpg",
+            "description": "Make some memories at this unique and family-friendly place.",
+            "province": "British Columbia",
+            "featured": false,
+            "price": 65,
+            "host": "Ron Mason"
+        },
+        {
+            "id": 22,
+            "name": "Pine Avenue",
+            "image": "images/cottage23.jpg",
+            "description": "Let cabin fever go and breathe in the fresh mountain air at this 2-bedroom, 2-bath vacation rental home",
+            "province": "Alberta",
+            "featured": false,
+            "price": 74,
+            "host": "Gary Darcy"
+        },
+        {
+            "id": 23,
+            "name": "Dusty Loft",
+            "image": "images/cottage24.jpg",
+            "description": "The perfect couple’s getaway, nestled in beautiful Hidden Valley.",
+            "province": "Quebec",
+            "featured": false,
+            "price": 89,
+            "host": "Julie Bolt"
+        }
+    ],
+    "reviews": [
+        {
+            "id": 0,
+            "locationId": 0,
+            "rating": 5,
+            "review": "The property is absolutely clean and stylish. It is exactly the same as shown in the pictures and within walking distances to various attractions.",
+            "author": "James Creen",
+            "date": "2020-10-16T17:57:28.556094Z"
+        },
+        {
+            "id": 1,
+            "locationId": 1,
+            "rating": 4,
+            "review": "This is a great place, in the best location, and the hosts were thoughtful with recommendations. The space was clean and amazing as advertised.",
+            "author": "Sean Timmons",
+            "date": "2018-09-05T17:57:28.556094Z"
+        },
+        {
+            "id": 2,
+            "locationId": 2,
+            "rating": 3,
+            "review": "We were delighted to find such a modern and clean space right near where we wanted to be. It was the perfect place for us to stay and such a great value. Thank you ",
+            "author": "Jessie Evans",
+            "date": "2019-02-13T17:57:28.556094Z"
+        },
+        {
+            "id": 3,
+            "locationId": 3,
+            "rating": 4,
+            "review": "A lovely & well presented good sized flat. The Location is absolutely brilliant. Everything you need for a short break or holiday is provided for you.",
+            "author": "Robyn Fenty",
+            "date": "2021-12-02T17:57:28.556094Z"
+        },
+        {
+            "id": 4,
+            "locationId": 4,
+            "rating": 2,
+            "review": "Very clean, very cosy. Bars are within walking distance. The apartment has everything you’d need, from toiletries to utensils and extra blankets.",
+            "author": "Jules Moore",
+            "date": "2017-12-02T17:57:28.556094Z"
+        },
+        {
+            "id": 5,
+            "locationId": 5,
+            "rating": 5,
+            "review": "The apartment was very clean, nicely decorated and well equipped, ideal for 4 people.",
+            "author": "Sam Peters",
+            "date": "2022-01-16T17:57:28.556094Z"
+        },
+        {
+            "id": 6,
+            "locationId": 6,
+            "rating": 4,
+            "review": "Very clean and tidy place in the a central location that is walkable to all the main sites. Hosts were easy to communicate with and the check in and check out process was seamless.",
+            "author": "Tom Holland",
+            "date": "2019-09-05T17:57:28.556094Z"
+        },
+        {
+            "id": 7,
+            "locationId": 7,
+            "rating": 5,
+            "review": "We enjoyed the stay in his apartment and want to come to his apartment again in near future. Without any reservations we are highly recommending this flat for the people who are keen on quality.",
+            "author": "Michael O'Toole",
+            "date": "2015-02-13T17:57:28.556094Z"
+        },
+        {
+            "id": 8,
+            "locationId": 8,
+            "rating": 4,
+            "review": "A very central apartment , conveniently situated. Spotlessly clean with everything we needed. Communication both before arrival and during our stay was prompt and helpful. Would happily recommend it.",
+            "author": "Sarah Freeman",
+            "date": "2016-12-02T17:57:28.556094Z"
+        },
+        {
+            "id": 9,
+            "locationId": 9,
+            "rating": 2,
+            "review": "This flat is the best location if your looking for great tourist areas. It was easy to find with the hosts instructions. The flat was clean and comfortable. The host was quick to respond and wonderful.",
+            "author": "Jack Holmes",
+            "date": "2021-12-02T17:57:28.556094Z"
+        },
+        {
+            "id": 10,
+            "locationId": 10,
+            "rating": 5,
+            "review": "We are definitely returning as soon as possible, and will be recommending this place to friends/ family! Thanks for such a lovely stay x",
+            "author": "Justine Carey",
+            "date": "2020-10-16T17:57:28.556094Z"
+        },
+        {
+            "id": 11,
+            "locationId": 11,
+            "rating": 4,
+            "review": "Great central location, walking distance from the station, clean and comfortable apartment with everything you may need for a comfortable stay Would recommend.",
+            "author": "Paul Bright",
+            "date": "2018-09-05T17:57:28.556094Z"
+        },
+        {
+            "id": 12,
+            "locationId": 12,
+            "rating": 3,
+            "review": "Great place! The place is quite new and well kept. The sheets and towels were all fresh, and the place was well equipped.",
+            "author": "Conor Simms",
+            "date": "2015-02-13T17:57:28.556094Z"
+        },
+        {
+            "id": 13,
+            "locationId": 13,
+            "rating": 4,
+            "review": "This apartment is not very far from the train station and is close to several shops and restaurants along the main road. This was a very nice, clean, and spacious apartment.",
+            "author": "Justin Hutchens",
+            "date": "2019-12-02T17:57:28.556094Z"
+        },
+        {
+            "id": 14,
+            "locationId": 14,
+            "rating": 2,
+            "review": "The flat was very spacious and as described could fit five people adequately. The host was excellent in his communication regarding booking confirmation and general communication.",
+            "author": "Laura Peters",
+            "date": "2016-07-02T17:57:28.556094Z"
+        },
+        {
+            "id": 15,
+            "locationId": 15,
+            "rating": 5,
+            "review": "Very convenient location. The apartment is modern and clean. Communication was great – quick response to any questions. A bit of street noise noticeable at night; but, it wouldn’t keep us from staying here again. We enjoyed our stay very much!",
+            "author": "Crystal Harris",
+            "date": "2019-10-16T17:57:28.556094Z"
+        },
+        {
+            "id": 16,
+            "locationId": 16,
+            "rating": 4,
+            "review": "Absolutely fantastic stay in this is awesome flat. It was spotlessly clean and had everything you could possibly need.",
+            "author": "Jack Tomlinson",
+            "date": "2021-09-05T17:57:28.556094Z"
+        },
+        {
+            "id": 17,
+            "locationId": 17,
+            "rating": 3,
+            "review": "We all had a great stay here! The host was extremely helpful right from booking all the way to check out. Went above and beyond to help in all ways.",
+            "author": "Mike Gills",
+            "date": "2022-02-13T17:57:28.556094Z"
+        },
+        {
+            "id": 18,
+            "locationId": 18,
+            "rating": 5,
+            "review": "The apartment has tea, coffee and there were even spices should you wish to cook. Highly recommended property and keen to pursue further bookings!! Five star rating!",
+            "author": "Jessica Ferris",
+            "date": "2015-12-02T17:57:28.556094Z"
+        },
+        {
+            "id": 19,
+            "locationId": 19,
+            "rating": 4,
+            "review": "The apartment was immaculate with modern furnishings to an excellent standard. There were special touches such as toiletries situated in the bathroom.",
+            "author": "Jim Paulson",
+            "date": "2021-12-02T17:57:28.556094Z"
+        }
+    ],
+    "hosts": [
+        {
+            "id": 0,
+            "locationId": 0,
+            "name": "Sally Walker",
+            "image": "images/user.png",
+            "rating": 5,
+            "description": "This host went above and beyond to provide guests with everything they need to make the stay comfortable.",
+            "featured": true
+
+        },
+        {
+            "id": 1,
+            "locationId": 1,
+            "name": "John Jones",
+            "image": "images/user.png",
+            "rating": 5,
+            "description": "The host made sure the property has everything you need. They clearly thought things through.",
+            "featured": true
+
+        },
+        {
+            "id": 2,
+            "locationId": 2,
+            "name": "Samantha Grove",
+            "image": "images/user.png",
+            "rating": 5,
+            "description": "Thank you to Samantha. We feel so privileged to have had the opportunity to stay in your beautiful quaint A frame cabin.",
+            "featured": true
+
+        }
+    ],
+    "testemonials": [
+        {
+            "id": 0,
+            "comment": "We had a great time at this place. The communication was super easy and quick and the place looks exactly like it does on the pictures.",
+            "featured": true,
+            "author": "Jenny Crawford",
+            "date": "2022-01-16T17:57:28.556094Z"
+        },
+        {
+            "id": 1,
+            "comment": "Top-notch VACAY experience, polite and accurate communication combined with elegant and well located apartment.",
+            "featured": true,
+            "author": "Tom McCarthy",
+            "date": "2019-10-12T17:57:28.556094Z"
+        },
+        {
+            "id": 2,
+            "comment": "We loved our stay! We felt very comfortable, safe, and it was very clean. The location was great, too. We just loved every minute of our visit.",
+            "featured": true,
+            "author": "Izzie Stephens",
+            "date": "2021-10-05T17:57:28.556094Z"
+        }
+    ]
+    
+}

@@ -22,7 +22,9 @@ class About extends Component {
                     </div>
                     <div className='col-12 col-md-6 mt-5'>
                     <h3 className='font'>About Us</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <p>Vacay is an interactive single page application that provides a rental service of cottages and cabins across Canada. Discover your
+                        next getaway with many destinations to choose from. 
+                    </p>
                     </div>
                 </div>
                 <RenderContact />
