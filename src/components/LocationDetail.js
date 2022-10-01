@@ -5,14 +5,16 @@ import { Link } from 'react-router-dom';
 import { LocalForm, Control, Errors } from 'react-redux-form';
 import { FadeTransform, Stagger, Fade } from 'react-animation-components';
 
-
+//-----------FORM VALIDATION---//
 const required = (val) => val && val.length;
 const minLength = (len) => (val) => (val) && (val.length >= len);
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 
+//------REVIEW FORM COMPONENT-----//
 class ReviewForm extends Component {
     constructor(props) {
         super(props);
+        {/* initiating the state configuration */}
         this.state = {
             isModalOpen: false
         };
@@ -20,7 +22,7 @@ class ReviewForm extends Component {
         this.toggleModal = this.toggleModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    //----review form component functions----//
     toggleModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen 
@@ -42,12 +44,13 @@ class ReviewForm extends Component {
                     </span> Submit Review
                 </Button>
                 </div>
-
+                {/* REVIEW FORM MODAL */}
                 <div className='container'>
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                         <ModalHeader className='modal-news' toggle={this.toggleModal}>Submit Review</ModalHeader>
                         <ModalBody className='modal-news'>
                             <LocalForm onSubmit={(vals) => this.handleSubmit(vals)}>
+                                {/* rating input */}
                                 <Row className='form-group'>
                                     <Label htmlFor='rating' md={12}>Rating</Label>
                                     <Col md={12}>
@@ -60,6 +63,7 @@ class ReviewForm extends Component {
                                           <option>4</option>
                                           <option>5</option>
                                         </Control.select>
+                                        {/* handling input errors */}
                                         <Errors
                                         className='text-danger'
                                         model='.rating'
@@ -69,6 +73,7 @@ class ReviewForm extends Component {
                                         }} />
                                     </Col>
                                 </Row>
+                                {/* author input */}
                                 <Row className='form-group'>
                                     <Label htmlFor='author' md={12}>Your Name</Label>
                                     <Col md={12}>
@@ -79,6 +84,7 @@ class ReviewForm extends Component {
                                             required, minLength: minLength(3), maxLength: maxLength(15)
                                         }}
                                         />
+                                        {/* handling input errors */}
                                         <Errors 
                                         className='text-danger'
                                         model='.author'
@@ -91,6 +97,7 @@ class ReviewForm extends Component {
                                         />
                                     </Col>
                                 </Row>
+                                {/* review input */}
                                 <Row className='form-group'>
                                     <Label htmlFor='review' md={12}>Review</Label>
                                     <Col md={12}>
@@ -114,16 +121,19 @@ class ReviewForm extends Component {
     }
 }
 
+//------RENDER LOCATION FUNCTION(passing in location props from MainComponent.js)
 function RenderLocation({location}) {
 
     if(location != null) {
         return (
             <div className='col-12 col-sm-12 col-md-5 d-flex justify-content-center'>
+                {/* REACT ANIMATION  */}
                 <FadeTransform
                 in
                 transformProps={{
                     exitTransform: 'scale(0.3) translateY(-20%)'
                 }}>
+                    {/* rendering LocationDetail card */}
                     <Card>
                         <CardImg src={location.image} alt={location.name} width='490' height='200' />
                         <CardBody>
@@ -149,10 +159,13 @@ function RenderLocation({location}) {
     
 }
 
+//------RENDER REVIEWS FUNCTION(passing in props from MainComponent.js to access review information)
 function RenderReviews({locations, reviews, postReview, locationId}) {
     const rev = reviews.map(review => {
         return (
-            <>  <Stagger in>
+            <> 
+                {/* REACT ANIMATION  */}
+                <Stagger in>
                     <Fade in>
                         <li key={review.id} className='py-3'>
                             <h5><span className='fa fa-star'></span><b> {review.rating}</b> Stars</h5>
@@ -179,6 +192,7 @@ function RenderReviews({locations, reviews, postReview, locationId}) {
                         {rev}  
                     </ul>
                 </div>
+                {/* passing in ReviewForm using props to display reviews */}
                   <ReviewForm
                   locations={locations} 
                   reviews={reviews}
@@ -195,7 +209,9 @@ function RenderReviews({locations, reviews, postReview, locationId}) {
     }
 }
 
+//---LOCATION DETIAL COMPONENT------//
 const LocationDetail = (props) => {
+    //using props from MainComponent.js to access location data
     const location = props.locations;
    
 
@@ -218,8 +234,10 @@ const LocationDetail = (props) => {
                     </div>
                 </div>
                 <div className='row'>
+                        {/* passing in our RenderLocation to display location content */}
                        <RenderLocation location={props.locations}
                         />
+                        {/* passing in our RenderReviews to display reviews content */}
                         <RenderReviews
                             reviews={props.reviews}
                             postReview={props.postReview}

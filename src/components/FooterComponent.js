@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 class Footer extends Component {
     render() {
         return (
-            //FOOTER COMPONENT
+            //FOOTER COMPONENT--------------//
             <div className='footer'>
                 <div className='container pt-5'>
                 <div className='row py-5'>

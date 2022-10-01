@@ -7,7 +7,7 @@ import { RenderCard, RenderContact, RenderTestemonials, SideNav } from '../funct
 class Locations extends Component {
     constructor(props) {
         super(props);
-        
+        {/* initiating the state configuration */}
         this.state = {
             isNavOpen: false,
             isModalOpen: false
@@ -15,6 +15,7 @@ class Locations extends Component {
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
     }
+    //----header component functions----//
     toggleNav() {
         this.setState({
             isNavOpen: !this.state.isNavOpen
@@ -31,16 +32,16 @@ class Locations extends Component {
     render() {
       
         const location = this.props.locations;
+        //----mapping over locations to display locations 
         const locations = location.map((location) => {
        
-                return(
+            return (
                 <div key={location.id}>
                     <RenderCard location={location}//calling RenderCard imported from functional component
                     isLoading={location.locationsLoading}
                     errMsg={location.locationsErrMsg}   />
-                </div>
-               
-                )
+                </div> 
+            );
       });
 
         return (
@@ -74,12 +75,14 @@ class Locations extends Component {
                             <h3 className='font d-flex justify-content-center my-3'>Featured Locations</h3>
                             <div className='row d-flex justify-content-center'>
                                 {locations}
+                                {/* importing RenderTestemonials func from functionalComponents.js passing in props from MainComponent to display information */}
                                 <RenderTestemonials testemonial={this.props.testemonial1}  />
                                 <RenderTestemonials testemonial={this.props.testemonial3}  />
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* importing RenderContact from functionalComponents.js */}
                 <RenderContact />
             </div>
         )

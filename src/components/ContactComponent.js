@@ -3,6 +3,7 @@ import { Button, Label, Col, Row } from 'reactstrap';
 import { Control, Form, Errors, actions } from 'react-redux-form';
 import { RenderNewsletter } from '../functionalComponents/functionalComponents';
 
+//-----------FORM VALIDATION---//
 //checks to see if the value is greater than 0
 const required = (val) => val && val.length;
 //function of functions - ensures that the length <= to the length value
@@ -12,9 +13,11 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
+//------CONTACT COMPONENT
 class Contact extends Component {
     constructor(props) {
         super(props);
+        //----setting up our state to handle our contact form modal
         this.state = {
             isModalOpen: false
         };
@@ -23,14 +26,16 @@ class Contact extends Component {
     }
 
     toggleModal() {
+        //---toggle modal functionality
         this.setState({
             isModalOpen: !this.state.isModalOpen
           });
     }
     handleSubmit(values) {
+        //----handling our form submission----
         // console.log('Current State is:' + JSON.stringify(values));
         alert('Thank you for your feedback!' + JSON.stringify(values));
-        this.props.postFeedback( values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message );
+        this.props.postFeedback( values.firstname, values.lastname, values.email, values.agree, values.message );
         this.props.resetFeedbackForm();
 
     }
@@ -39,8 +44,9 @@ class Contact extends Component {
     render() {
         
         return (
-            //CONTACT FORM
+            //--------CONTACT FORM-------------//
             <div className='container contact-form align-items-center'>
+                {/* importing RenderNewsletter func from functionalComponents.js and passing props for functionality */}
                 <RenderNewsletter 
                     onClick={this.toggleModal}
                     isOpen={this.state.isModalOpen}
@@ -58,8 +64,10 @@ class Contact extends Component {
                         <p className='font py-5'>We provide 24/7 support. Our teams are ready to answer your queries.</p>
                     </div>
                     <div className='col-12 col-sm-12 col-md-12 col-lg-6 offset-md-1 row-bg py-3'>
-                        <Form className='p-5' model='feedback' onSubmit={(values) => this.handleSubmit(values)} resetOnSubmit={true}>
+                        {/*---- CONTACT FORM ----*/}
+                        <Form className='p-5' model='feedback' onSubmit={(values) => this.handleSubmit(values)}>
                             <Row className='form-group'>
+                                {/* firstname input */}
                                 <Label htmlFor='firstname'>First Name</Label>
                                 <Control.text model='.firstname' id='firstname' name='firstname' 
                                     className='form-control'
@@ -68,6 +76,7 @@ class Contact extends Component {
                                         required, minLength: minLength(3), maxLength: maxLength(15),
                                     }}
                                 />
+                                {/* handling input errors */}
                                 <Errors
                                     className='text-danger'
                                     model='.firstname'
@@ -79,6 +88,7 @@ class Contact extends Component {
                                     }} 
                                 />
                             </Row>
+                            {/* lastname input */}
                             <Row className='form-group'>
                                 <Label htmlFor='lastname'>Last Name</Label>
                                 <Control.text model='.lastname' id='lastname' name='lastname'
@@ -88,6 +98,7 @@ class Contact extends Component {
                                         required, minLength: minLength(3), maxLength: maxLength(15),
                                     }}
                                 />
+                                {/* handling input errors */}
                                 <Errors
                                     className='text-danger'
                                     model='.lastname'
@@ -99,6 +110,7 @@ class Contact extends Component {
                                     }} 
                                 />
                             </Row>
+                            {/* email input */}
                             <Row className='form-group'>
                                 <Label htmlFor='email'>Email</Label>
                                 <Control.text model='email' id='email' name='email' 
@@ -108,6 +120,7 @@ class Contact extends Component {
                                         required, validEmail
                                     }}
                                 />
+                                {/* handling input errors */}
                                 <Errors
                                     className='text-danger'
                                     model='.email'
@@ -118,6 +131,7 @@ class Contact extends Component {
                                     }} 
                                 />
                             </Row>
+                            {/* checkbox input */}
                             <Row className='form-group'>
                                 <Col md={{size: 6}}>
                                     <div className='form-check'>
@@ -142,14 +156,6 @@ class Contact extends Component {
                                  </Button>
                             </Row>
                         </Form>
-                    </div>
-                </div>
-                <h2 className='font text-center my-5'>Frequently Asked Questions</h2>
-                <div className='row row-content'>
-                    <div className='col-12'>
-                        <div className='py-5'>
-                            
-                        </div>
                     </div>
                 </div>
             </div>

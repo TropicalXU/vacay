@@ -1,5 +1,6 @@
 import React from 'react';
 
+//-----LOADING FUNCTION-----//
 export const Loading = () => {
     return (
         <div className='container'>

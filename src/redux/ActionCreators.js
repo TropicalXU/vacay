@@ -11,6 +11,7 @@ export const addReview = (review) => ({
     payload: review
 });
 
+//POST REQUEST(PostReview)---------------------//
 export const postReview = (locationId, rating, author, review) => (dispatch) => {
     
     const newReview = {
@@ -52,6 +53,7 @@ export const postReview = (locationId, rating, author, review) => (dispatch) => 
 }
 
 //postfeedback action//--------------------------------------
+//POST REQUEST(PostFeedback)---------------------//
 export const postFeedback = (firstname, lastname, email, agree, message) => (dispatch) => {
 
     const newFeedback = {
@@ -95,6 +97,7 @@ export const postFeedback = (firstname, lastname, email, agree, message) => (dis
 
 
 //locations action//-----------------------------------------
+//GET REQUEST(FetchLocations)--------------------
 export const fetchLocations = () => (dispatch) => {
     dispatch(locationsLoading(true));
 
@@ -137,6 +140,7 @@ export const addLocations = (locations) => ({
 
 
 //reviews action//--------------------------------------
+//GET REQUEST(FetchReviews)--------------------//
 export const fetchReviews = () => (dispatch) => {
     
     return fetch(baseUrl + "reviews")

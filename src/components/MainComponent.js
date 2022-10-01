@@ -15,7 +15,7 @@ import Quebec from './QuebecComponent';
 import { actions } from 'react-redux-form';
 import { fetchLocations, fetchReviews, postReview, postFeedback } from '../redux/ActionCreators';
 
-
+//-mapping our state from redux so we can access as props//
 const mapSateToProps = state => {
     return {
         locations: state.locations,
@@ -25,6 +25,7 @@ const mapSateToProps = state => {
     }
 }
 
+//--allows us to specify which actions your component might need to dispatch//
 const mapDispatchToProps = (dispatch) => ({
     postReview: (locationId, rating, author, review) => dispatch(postReview(locationId, rating, author, review)),
 
@@ -43,7 +44,7 @@ const mapDispatchToProps = (dispatch) => ({
    
 });
 
-
+//----MAIN COMPONENT----//
 class Main extends Component {
 
     componentDidMount() {
@@ -54,6 +55,7 @@ class Main extends Component {
     render() {
         const HomePage = () => {
             return (
+                //passing down our props to access from homepage
                 <Home location1={this.props.locations.locations.filter((location) => location.featured)[0]} 
                         location2={this.props.locations.locations.filter((location) => location.featured)[1]}
                         location3={this.props.locations.locations.filter((location) => location.featured)[2]}
@@ -71,6 +73,7 @@ class Main extends Component {
 
         const OntarioFeatured = () => {
             return (
+                //passing down our props to access from Ontario page
                 <Ontario location={this.props.locations.locations.filter((location) => location.province === 'Ontario')}
                     testemonial1={this.props.testemonials.filter((testemonial) => testemonial.featured)[0]}
                     testemonial2={this.props.testemonials.filter((testemonial) => testemonial.featured)[1]}
@@ -83,6 +86,7 @@ class Main extends Component {
 
         const BcFeatured = () => {
             return (
+                //passing down our props to access from british columbia page
                 <BritishColumbia location={this.props.locations.locations.filter((location) => location.province === 'British Columbia')}
                 testemonial1={this.props.testemonials.filter((testemonial) => testemonial.featured)[0]}
                 testemonial2={this.props.testemonials.filter((testemonial) => testemonial.featured)[1]}
@@ -94,6 +98,7 @@ class Main extends Component {
 
         const AlbertaFeatured = () => {
             return (
+                //passing down our props to access from alberta page
                 <Alberta location={this.props.locations.locations.filter((location) => location.province === 'Alberta')}
                 testemonial2={this.props.testemonials.filter((testemonial) => testemonial.featured)[1]}
                 testemonial3={this.props.testemonials.filter((testemonial) => testemonial.featured)[2]}
@@ -105,6 +110,7 @@ class Main extends Component {
 
         const QuebecFeatured = () => {
             return (
+                //passing down our props to access from quebec page
                 <Quebec location={this.props.locations.locations.filter((location) => location.province === 'Quebec')}
                 testemonial1={this.props.testemonials.filter((testemonial) => testemonial.featured)[0]}
                 testemonial3={this.props.testemonials.filter((testemonial) => testemonial.featured)[2]}
@@ -116,6 +122,7 @@ class Main extends Component {
 
         const LocationWithId = ({match}) => {
             return (
+                //passing down our props to access from LocationDetail page
                 <LocationDetail
                 locations={this.props.locations.locations.filter((location) => location.id === parseInt(match.params.locationId, 10))[0]}
                 reviews={this.props.reviews.reviews.filter((review) => review.locationId === parseInt(match.params.locationId, 10))}

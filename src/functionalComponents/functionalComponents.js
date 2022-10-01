@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Loading } from '../components/LoadingComponent';
 import { FadeTransform } from 'react-animation-components';
-import { baseUrl, imgUrl } from '../shared/baseUrl';
 
+//----MAIN APP FUNCTIONALITIES
+
+//--RenderCard function--------------------------------
 export const RenderCard = ({location, isLoading, errMsg}) => {
     if(isLoading) {
         return (
@@ -24,6 +26,7 @@ export const RenderCard = ({location, isLoading, errMsg}) => {
     }
     else {
         return (
+          /* REACT ANIMATION  */
             <FadeTransform
                 in
                 transformProps={{
@@ -50,6 +53,7 @@ export const RenderCard = ({location, isLoading, errMsg}) => {
     }
 }
 
+//RenderTestemonials function--------------------------
 export const RenderTestemonials = ({testemonial}) => {
 
     if(testemonial != null) {
@@ -76,12 +80,13 @@ export const RenderTestemonials = ({testemonial}) => {
     }
 }
 
+//RenderHostCard function-----------------------
 export const RenderHostCard = ({host}) => {
     return (
         <Card className='text-center'>
             <CardImg />
             <CardBody>
-                <img src={host.image} width='70' height='70' className='my-3' />
+                <img src={host.image} alt={host.name} width='70' height='70' className='my-3' />
                 <CardTitle>{host.name}</CardTitle>
                 <CardText><span className='fa fa-star'></span><b> {host.rating}</b> Stars</CardText>
                 <CardText>{host.description}</CardText>
@@ -90,52 +95,7 @@ export const RenderHostCard = ({host}) => {
     )
 }
 
-export const RenderRegisterModal = ({isOpen, toggle, onSubmit}) => {
-    return (
-        <>
-            <Modal isOpen={isOpen} toggle={toggle} fade={false} className="col-12">
-				<ModalHeader className='modal-news' toggle={toggle}>Register</ModalHeader>
-				<ModalBody className='modal-news'>
-                    <Form onSubmit={onSubmit}>
-                        <FormGroup>
-                            <Label htmlFor='firstname'>First Name</Label>
-                            <Input type='text' id='firstname' name='firstname'
-                            innerRef={(input) => this.firstname = input}
-                            placeholder='First Name'/>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label htmlFor='lastname'>Last Name</Label>
-                            <Input type='text' id='lastname' name='lastname'
-                            innerRef={(input) => this.lastname = input}
-                            placeholder='Last Name'/>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label htmlFor='email'>Email</Label>
-                            <Input type='email' id='email' name='email'
-                            innerRef={(input) => this.email = input}
-                            placeholder='Email'/>
-                        </FormGroup>
-                        <FormGroup>
-                            <Label htmlFor='password'>Password</Label>
-                            <Input type='password' id='password' name='password'
-                            innerRef={(input) => this.password = input}
-                            />
-                        </FormGroup>
-                        <FormGroup check>
-                            <Label check>
-                                <Input type='checkbox' name='remember'
-                                 innerRef={(input) => this.remember = input}/>
-                                Remember me
-                            </Label>
-                        </FormGroup>
-                        <Button type='submit' color='primary'>Register</Button>
-                    </Form>
-				</ModalBody>
-			</Modal>
-        </>
-    )
-}
-
+//RenderNewsletter function------------------------------
 export const RenderNewsletter = ({onClick, isOpen, toggle, onSubmit, name, email}) => {
     return (
         <>  <div className='row newsletter my-3 py-5'>
@@ -171,6 +131,7 @@ export const RenderNewsletter = ({onClick, isOpen, toggle, onSubmit, name, email
     );
 }
 
+//RenderContact function -----------------------------------
 export const RenderContact = () => {
     return (
         <div className='container'>
@@ -183,6 +144,7 @@ export const RenderContact = () => {
     );
 }
 
+//SideNav function --------------------------------------------
 export const SideNav = ({onClick}) => {
     return (
         <>

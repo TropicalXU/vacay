@@ -4,12 +4,12 @@ import {
     Button, Modal, ModalHeader, ModalBody, FormGroup, Form, Label, Input
 } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
-import { RenderRegisterModal } from '../functionalComponents/functionalComponents';
 
+//--------HEADER COMPONENT----------//
 class Header extends Component {
     constructor(props) {
         super(props);
-
+        {/* initiating the state configuration */}
         this.state = {
             isNavOpen: false,
             isLoginModalOpen: false,
@@ -18,7 +18,10 @@ class Header extends Component {
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleLoginModal = this.toggleLoginModal.bind(this);
         this.toggleRegisterModal = this.toggleRegisterModal.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleRegister = this.handleRegister.bind(this);
     }
+    //----header component functions----//
     toggleNav() {
         this.setState({
             isNavOpen: !this.state.isNavOpen
@@ -33,6 +36,17 @@ class Header extends Component {
         this.setState({
             isRegisterModalOpen: !this.state.isRegisterModalOpen
           });
+    }
+
+    handleLogin(evt) {
+        this.toggleModal();
+        alert('Username: ' + this.username.value + 'Password:' + this.password.value + 'Remember: ' + this.remember.checked);
+        evt.preventDefault();
+    }
+    handleRegister(evt) {
+        this.toggleModal();
+        alert('Firstname: ' + this.firstname.value + 'Lastname: ' + this.lastname.value + 'Email: ' + this.email.value + 'Password: ' + this.password.value + 'Remember: ' + this.remember.checked);
+        evt.preventDefault();
     }
 
     render() {
@@ -128,7 +142,7 @@ class Header extends Component {
             <Modal isOpen={this.state.isRegisterModalOpen} toggle={this.toggleRegisterModal} fade={false} className="col-12">
 				<ModalHeader className='modal-news' toggle={this.toggleRegisterModal}>Register</ModalHeader>
 				<ModalBody className='modal-news'>
-                    <Form onSubmit={this.handleLogin}>
+                    <Form onSubmit={this.handleRegister}>
                         <FormGroup>
                             <Label htmlFor='firstname'>First Name</Label>
                             <Input type='text' id='firstname' name='firstname'

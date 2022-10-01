@@ -4,6 +4,7 @@ import { RenderContact, RenderHostCard } from '../functionalComponents/functiona
 class About extends Component {
     render() {
         return (
+            //----HOST CARD SECTION------//(IMPORTING RenderHostCard from functionalComponents.js)
             <div className='container'>
                 <div className='row justify-content-center my-5'>
                     <h3 className='font'>Meet Our Top Hosts</h3>
@@ -16,6 +17,7 @@ class About extends Component {
                         
                     </div>
                 </div>
+                {/* ABOUT US SECTION */}
                 <div className='row my-5 my-5 py-5'>
                     <div className='col-12 col-md-6 d-flex justify-content-center mb-5'>
                         <img src='/assets/images/information.png' width='250' height='250' />
@@ -27,6 +29,7 @@ class About extends Component {
                     </p>
                     </div>
                 </div>
+                {/* IMPORTING RenderContact from functionalComponents.js */}
                 <RenderContact />
             </div>
         )
