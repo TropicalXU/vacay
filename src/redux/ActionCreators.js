@@ -1,8 +1,5 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
-import { LOCATIONS } from '../shared/locations';
-import { REVIEWS } from '../shared/reviews';
-import { HOSTS } from '../shared/hosts';
 
 
 //review action//----------------------------------------------

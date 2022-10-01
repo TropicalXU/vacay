@@ -9,23 +9,20 @@ class Locations extends Component {
         super(props);
         {/* initiating the state configuration */}
         this.state = {
-            isNavOpen: false,
             isModalOpen: false
         };
-        this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
     }
     //----header component functions----//
-    toggleNav() {
-        this.setState({
-            isNavOpen: !this.state.isNavOpen
-        });
-    }
-
     toggleModal() {
         this.setState({
             isModalOpen: !this.state.isModalOpen
           });
+    }
+    handleSubmit(evt) {
+        this.toggleModal();
+        alert('Name: ' + this.name.value + 'Email: ' + this.email.value);
+        evt.preventDefault();
     }
 
 
@@ -49,7 +46,7 @@ class Locations extends Component {
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal} fade={false} className="col-12 modal-main">
                     <ModalHeader className='modal-news' toggle={this.toggleModal}>Sign up!</ModalHeader>
                     <ModalBody className='modal-news'>
-                        <Form onSubmit={this.handleLogin}>
+                        <Form onSubmit={this.handleSubmit}>
                           <FormGroup>
                             <Label htmlFor='name'>Name</Label>
                             <Input type='text' id='name' name='name'

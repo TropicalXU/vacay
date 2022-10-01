@@ -20,7 +20,7 @@ class About extends Component {
                 {/* ABOUT US SECTION */}
                 <div className='row my-5 my-5 py-5'>
                     <div className='col-12 col-md-6 d-flex justify-content-center mb-5'>
-                        <img src='/assets/images/information.png' width='250' height='250' />
+                        <img src='/assets/images/information.png' alt='Information Logo' width='250' height='250' />
                     </div>
                     <div className='col-12 col-md-6 mt-5'>
                     <h3 className='font'>About Us</h3>
