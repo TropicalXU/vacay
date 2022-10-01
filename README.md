@@ -1,3 +1,52 @@
+# VACAY
+
+View the website here:
+https://vacay.layerlabs.io
+</br>
+</br>
+
+## Introduction
+***
+Vacay is a website built on top of the React framework. This is a project based website for the Front End Development With React Specialization (honors)course from The Hong Kong University of Science and Technology. I created this app with the knowledge of the course material. The application features data hosted on a json server that is called using Redux Actions and Fetch. Each location has a unique id which you can select to view more details. With this application you can also submit a review based on that location. This was initialized using a 'POST' request with Redux. Througout the app are many functional components built in  which can be seen repeated on different routes. I created a file called functionalComponents.js to store those components that I would need to call on more than once such as the RenderCard & SideNav function. The side bar feature is displayed in each of the location routes so that you can easily navigate throughout the different locations provided.
+</br>
+</br>
+
+
+## Website Images
+***
+<img width="1440" alt="Screen Shot 2022-10-01 at 5 21 21 PM" src="https://user-images.githubusercontent.com/100976172/193428789-fdb22f08-e0c3-4e08-96f4-95db1b0392ad.png">
+
+<img width="1440" alt="Screen Shot 2022-10-01 at 5 22 45 PM" src="https://user-images.githubusercontent.com/100976172/193428828-382a5728-f6a7-49c0-b9e9-918790a9e0b3.png">
+
+
+![screencapture-vacay-layerlabs-io-contact-2022-10-01-17_25_10](https://user-images.githubusercontent.com/100976172/193428892-e72596e8-eee3-404c-aa20-cfb75c6ed8ea.png)
+
+</br>
+</br>
+
+## Steps to download this website
+***
+In the command line type:
+
+Create a folder:
+### `mkdir <folder name>` 
+
+Initialize git:
+### `git init -y` 
+
+Clone Repository:
+### `git clone https://github.com/TropicalXU/vacay.git`
+
+Start the application:
+### `npm start` 
+
+
+## Contact
+***
+Sean Hackett - seanhackettDEV@gmail.com </br>
+Personal Website - https://www.layerlabs.io
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
