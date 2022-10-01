@@ -2,8 +2,117 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem,
     Button, Modal, ModalHeader, ModalBody, Row, Label, Col  } from 'reactstrap';   
 import { Link } from 'react-router-dom';
-import { FadeTransform } from 'react-animation-components';
-import ReviewForm from './ReviewFormComponent';
+import { LocalForm, Control, Errors } from 'react-redux-form';
+import { FadeTransform, Stagger, Fade } from 'react-animation-components';
+
+
+const required = (val) => val && val.length;
+const minLength = (len) => (val) => (val) && (val.length >= len);
+const maxLength = (len) => (val) => !(val) || (val.length <= len);
+
+class ReviewForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isModalOpen: false
+        };
+
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen 
+        });
+    }
+    handleSubmit(vals, evt) {
+        // evt.preventDefault();
+        console.log('Current State is:' + JSON.stringify(vals));
+        alert('Current State is:' + JSON.stringify(vals));
+        this.props.postReview(this.props.locationId, vals.rating, vals.author, vals.review)
+        
+    }
+
+    render() {
+        return (
+            <>  <div className='row my-3 ml-1'>
+                <Button color='secondary' onClick={this.toggleModal}>
+                    <span className='fa fa-comments fa-lg'>
+                    </span> Submit Review
+                </Button>
+                </div>
+
+                <div className='container'>
+                    <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                        <ModalHeader className='modal-news' toggle={this.toggleModal}>Submit Review</ModalHeader>
+                        <ModalBody className='modal-news'>
+                            <LocalForm onSubmit={(vals) => this.handleSubmit(vals)}>
+                                <Row className='form-group'>
+                                    <Label htmlFor='rating' md={12}>Rating</Label>
+                                    <Col md={12}>
+                                        <Control.select model='.rating' id='rating' name='rating'
+                                            className='form-control'>
+                                          <option>Select Rating</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                        </Control.select>
+                                        <Errors
+                                        className='text-danger'
+                                        model='.rating'
+                                        show='touched'
+                                        messages={{
+                                            required: 'Required!'
+                                        }} />
+                                    </Col>
+                                </Row>
+                                <Row className='form-group'>
+                                    <Label htmlFor='author' md={12}>Your Name</Label>
+                                    <Col md={12}>
+                                        <Control.text model='.author' id='author' name='author'
+                                        className='form-control'
+                                        placeholder='Your Name'
+                                        validators={{
+                                            required, minLength: minLength(3), maxLength: maxLength(15)
+                                        }}
+                                        />
+                                        <Errors 
+                                        className='text-danger'
+                                        model='.author'
+                                        show='touched'
+                                        messages={{
+                                            required: 'Required! ',
+                                            minLength: 'Must be greater than two characters!',
+                                            maxLength: 'Must be 15 characters or less!'
+                                        }}
+                                        />
+                                    </Col>
+                                </Row>
+                                <Row className='form-group'>
+                                    <Label htmlFor='review' md={12}>Review</Label>
+                                    <Col md={12}>
+                                        <Control.textarea model='.review' id='review' name='review'
+                                        className='form-control'
+                                        rows='6'
+                                        />
+                                    </Col>
+                                </Row>
+                                <Row className='form-group'>
+                                    <Col md={12}>
+                                        <Button type='submit' color='primary'>Submit</Button>
+                                    </Col>
+                                </Row>
+                            </LocalForm>
+                        </ModalBody>
+                    </Modal>
+                </div>
+            </>
+        )
+    }
+}
 
 function RenderLocation({location}) {
 
@@ -16,7 +125,7 @@ function RenderLocation({location}) {
                     exitTransform: 'scale(0.3) translateY(-20%)'
                 }}>
                     <Card>
-                        <CardImg src={location.image} width='490' height='200' />
+                        <CardImg src={location.image} alt={location.name} width='490' height='200' />
                         <CardBody>
                             <CardTitle>{location.name}</CardTitle>
                             <CardText>{location.description}</CardText>
@@ -40,19 +149,24 @@ function RenderLocation({location}) {
     
 }
 
-function RenderReviews({reviews}) {
+function RenderReviews({locations, reviews, postReview, locationId}) {
     const rev = reviews.map(review => {
         return (
-            <li key={review.id}>
-                <p><span className='fa fa-star'></span><b> {review.rating}</b> Stars</p>
-                <p>{review.review}</p>
-                <p> --<i><b>{review.author}</b></i>, &nbsp;
-                {new Intl.DateTimeFormat('en-US',
-                        {year: 'numeric',
-                        month: 'short',
-                        day: '2-digit'}).format(new Date(Date.parse(review.date)))}
-                </p>
-            </li>
+            <>  <Stagger in>
+                    <Fade in>
+                        <li key={review.id} className='py-3'>
+                            <h5><span className='fa fa-star'></span><b> {review.rating}</b> Stars</h5>
+                            <p className='py-3'>{review.review}</p>
+                            <p> --<i><b>{review.author}</b></i>, &nbsp;
+                            {new Intl.DateTimeFormat('en-US',
+                                    {year: 'numeric',
+                                    month: 'short',
+                                    day: '2-digit'}).format(new Date(Date.parse(review.date)))}
+                            </p>
+                        </li>
+                    </Fade>
+                </Stagger>
+            </>
         );
     });
 
@@ -60,12 +174,17 @@ function RenderReviews({reviews}) {
         return (
             <div className='col-12 col-sm-12 col-md-5 align-items-center'>
                 <h4 className='font'>Reviews</h4>
-                <div className='box my-5'>
+                <div className='box my-3'>
                     <ul className='list-unstyled p-5'>
                         {rev}  
                     </ul>
                 </div>
-                  <ReviewForm />
+                  <ReviewForm
+                  locations={locations} 
+                  reviews={reviews}
+                  locationId={locationId} 
+                  postReview={postReview}
+                   />
             </div>
         );
     }
@@ -78,7 +197,7 @@ function RenderReviews({reviews}) {
 
 const LocationDetail = (props) => {
     const location = props.locations;
-    const review = props.reviews;
+   
 
     if(location != null) {
         return (
@@ -100,9 +219,12 @@ const LocationDetail = (props) => {
                 </div>
                 <div className='row'>
                        <RenderLocation location={props.locations}
-                         />
-                       <RenderReviews reviews={props.reviews}
-                         />
+                        />
+                        <RenderReviews
+                            reviews={props.reviews}
+                            postReview={props.postReview}
+                            locationId={props.locations.id}
+                        />
                     </div>
             </div>
         );

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import {
-    Navbar, Nav, NavbarToggler, Collapse, NavItem, Card, Button,
-     CardBody, CardTitle, CardText, Modal, ModalHeader, ModalBody,
-    Form, FormGroup, Label, Input} from 'reactstrap';
+import { Button,  Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input} from 'reactstrap';
 import { RenderCard, RenderContact, RenderTestemonials, SideNav } from '../functionalComponents/functionalComponents'
 
+//----LOCATIONS COMPONENT-------//
 
 class Locations extends Component {
     constructor(props) {
@@ -37,7 +35,7 @@ class Locations extends Component {
        
                 return(
                 <div key={location.id}>
-                    <RenderCard location={location}
+                    <RenderCard location={location}//calling RenderCard imported from functional component
                     isLoading={location.locationsLoading}
                     errMsg={location.locationsErrMsg}   />
                 </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Label, Col, Row } from 'reactstrap';
-import { Control, LocalForm, Errors } from 'react-redux-form';
+import { Control, Form, Errors, actions } from 'react-redux-form';
 import { RenderNewsletter } from '../functionalComponents/functionalComponents';
 
 //checks to see if the value is greater than 0
@@ -9,8 +9,7 @@ const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 //ensures that the length <= to the length value
 const minLength = (len) => (val) => (val) && (val.length >= len);
-//checks to make sure is a num
-const isNumber = (val) => !isNaN(Number(val));
+
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Contact extends Component {
@@ -28,26 +27,28 @@ class Contact extends Component {
             isModalOpen: !this.state.isModalOpen
           });
     }
+    handleSubmit(values) {
+        // console.log('Current State is:' + JSON.stringify(values));
+        alert('Thank you for your feedback!' + JSON.stringify(values));
+        this.props.postFeedback( values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message );
+        this.props.resetFeedbackForm();
 
-    handleSubmit(evt) {
-        this.toggleModal();
-        alert('Name: ' + this.name.value + 'Email:' + this.email.value);
-        evt.preventDefault();
     }
+
   
     render() {
         
         return (
             //CONTACT FORM
             <div className='container contact-form align-items-center'>
-                {/* <RenderNewsletter 
+                <RenderNewsletter 
                     onClick={this.toggleModal}
                     isOpen={this.state.isModalOpen}
                     toggle={this.toggleModal}
                     onSubmit={this.handleSubmit}
                     name={this.name}
                     email={this.email}
-                />            */}
+                />           
                 <h3 className='font my-5 text-center'>Contact Us</h3>
                 <div className='row row-content'>
                     <div className='col-12 col-sm-12 col-md-5 text-center mt-5'>
@@ -57,7 +58,7 @@ class Contact extends Component {
                         <p className='font py-5'>We provide 24/7 support. Our teams are ready to answer your queries.</p>
                     </div>
                     <div className='col-12 col-sm-12 col-md-12 col-lg-6 offset-md-1 row-bg py-3'>
-                        <LocalForm className=' p-5'>
+                        <Form className='p-5' model='feedback' onSubmit={(values) => this.handleSubmit(values)} resetOnSubmit={true}>
                             <Row className='form-group'>
                                 <Label htmlFor='firstname'>First Name</Label>
                                 <Control.text model='.firstname' id='firstname' name='firstname' 
@@ -65,7 +66,6 @@ class Contact extends Component {
                                     placeholder='First Name'
                                     validators={{
                                         required, minLength: minLength(3), maxLength: maxLength(15),
-
                                     }}
                                 />
                                 <Errors
@@ -86,7 +86,6 @@ class Contact extends Component {
                                     placeholder='Last Name'
                                     validators={{
                                         required, minLength: minLength(3), maxLength: maxLength(15),
-
                                     }}
                                 />
                                 <Errors
@@ -142,7 +141,7 @@ class Contact extends Component {
                                     Send Feedback
                                  </Button>
                             </Row>
-                        </LocalForm>
+                        </Form>
                     </div>
                 </div>
                 <h2 className='font text-center my-5'>Frequently Asked Questions</h2>

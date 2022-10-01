@@ -1,4 +1,5 @@
 import * as ActionTypes from './ActionTypes';
+import { baseUrl } from '../shared/baseUrl';
 import { LOCATIONS } from '../shared/locations';
 import { REVIEWS } from '../shared/reviews';
 import { HOSTS } from '../shared/hosts';
@@ -20,7 +21,7 @@ export const postReview = (locationId, rating, author, review) => (dispatch) => 
     }
     newReview.date = new Date().toISOString();
 
-    return fetch(REVIEWS.review, {
+    return fetch(baseUrl + 'reviews', {
         method: 'POST',
         body: JSON.stringify(newReview),
         headers: {
@@ -50,22 +51,74 @@ export const postReview = (locationId, rating, author, review) => (dispatch) => 
     
 }
 
+//postfeedback action//--------------------------------------
+export const postFeedback = (firstname, lastname, email, agree, message) => (dispatch) => {
+
+    const newFeedback = {
+        fistname: firstname,
+        lastname: lastname,
+        email: email,
+        agree: agree,
+        message: message
+    }
+    newFeedback.date = new Date().toISOString();
+
+    return fetch(baseUrl + 'feedback', {
+        method: 'POST',
+        body: JSON.stringify(newFeedback),
+        headers: {
+            'Content-Type' : 'application.json'
+        },
+        credentials: 'same-origin'
+    })
+    .then(response => {
+        if(response.ok) {
+            return response;
+        }
+        else {
+            const error = new Error('Error' + response.status + ': ' + response.statusText)
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        let errMsg = new Error(error.message);
+        throw errMsg;
+    })
+    .then(response => response.json())
+    .then(response => {alert('Thank you for your feedback!\n' + JSON.stringify(response))})
+    .catch(error => {
+        console.log('Error', error.message);
+        alert('Your feedback could not be posted!\nError: ' + error.message);
+    });
+}
+
 
 //locations action//-----------------------------------------
 export const fetchLocations = () => (dispatch) => {
     dispatch(locationsLoading(true));
 
-    setTimeout(() => {
-        dispatch(addLocations(LOCATIONS));
-    }, 2000);
-}
-
-export const fetchReviews = () => (dispatch) => {
+   return fetch(baseUrl + 'locations')
     
+    .then(response => {
+        if(response.ok) {
+            return response;
+        }
+        else {
+            const error = new Error('Error' + response.status + ': ' + response.statusText);
+            error.response = response;
+            throw error;
+        }
+    },
+    error => {
+        const errMsg = new Error(error.message);
+        throw errMsg
+    })
+    .then(response => response.json())
+    .then(locations => dispatch(addLocations(locations)))
+    .catch(error => dispatch(locationsFailed(error.message)))
 
-    setTimeout(() => {
-        dispatch(addReviews(REVIEWS));
-    }, 2000);
+  
 }
 
 export const locationsLoading = () => ({
@@ -84,6 +137,29 @@ export const addLocations = (locations) => ({
 
 
 //reviews action//--------------------------------------
+export const fetchReviews = () => (dispatch) => {
+    
+    return fetch(baseUrl + "reviews")
+        .then(response => {
+            if(response.ok) {
+                return response;
+            }
+            else {
+                const error = new Error('Error' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
+            }
+        },
+        error => {
+            const errMsg = new Error(error.message);
+            throw errMsg
+        })
+        .then(response => response.json())
+        .then(reviews => dispatch(addReviews(reviews)))
+        .catch(error => dispatch(reviewsFailed(error.message)))
+}
+
+
 export const reviewsFailed = (errMsg) => ({
     type: ActionTypes.REVIEWS_FAILED,
     payload: errMsg

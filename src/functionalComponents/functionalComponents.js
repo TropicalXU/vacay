@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Loading } from '../components/LoadingComponent';
 import { FadeTransform } from 'react-animation-components';
+import { baseUrl, imgUrl } from '../shared/baseUrl';
 
 export const RenderCard = ({location, isLoading, errMsg}) => {
     if(isLoading) {
@@ -28,8 +29,8 @@ export const RenderCard = ({location, isLoading, errMsg}) => {
                 transformProps={{
                     exitTransform: 'scale(0.3) translateY(-20%)'
             }}>
-                <Card className='text-center'>
-                    <CardImg src={location.image} width='40' height='200'/>
+                <Card className='text-center card-main'>
+                    <CardImg src={location.image} alt={location.name} width='40' height='200'/>
                     <CardBody>
                         <CardTitle>{location.name}</CardTitle>
                         {/* <CardText>{location.description}</CardText> */}

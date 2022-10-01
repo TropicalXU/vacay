@@ -12,7 +12,8 @@ import Ontario from './OntarioComponent';
 import BritishColumbia from './BritishColumbia';
 import Alberta from './AlbertaComponent';
 import Quebec from './QuebecComponent';
-import { addReview, fetchLocations, fetchReviews, postReview } from '../redux/ActionCreators';
+import { actions } from 'react-redux-form';
+import { fetchLocations, fetchReviews, postReview, postFeedback } from '../redux/ActionCreators';
 
 
 const mapSateToProps = state => {
@@ -26,6 +27,10 @@ const mapSateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => ({
     postReview: (locationId, rating, author, review) => dispatch(postReview(locationId, rating, author, review)),
+
+    postFeedback: (firstname, lastname, email, agree, message) => dispatch(postFeedback(firstname, lastname, email, agree, message)),
+
+    resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
 
     fetchLocations: () => {
         dispatch(fetchLocations())
@@ -118,6 +123,7 @@ class Main extends Component {
                 locationsErrMsg={this.props.locations.errMsg}
                 postReview={this.props.postReview} 
                 reviewsErrMsg={this.props.reviews.errMsg}
+                locationId={this.props.locations.locationId}
                  />
             );
         };
@@ -144,7 +150,11 @@ class Main extends Component {
                     <Route exact path='/about' component={ () => <About host1={this.props.hosts.filter((host) => host.featured)[0]}
                         host2={this.props.hosts.filter((host) => host.featured)[1]} 
                         host3={this.props.hosts.filter((host) => host.featured)[2]} /> } />
-                    <Route exact path='/contact' component={ () => <Contact /> } />
+                    <Route exact path='/contact' component={ () => 
+                    <Contact
+                    resetFeedbackForm={this.props.resetFeedbackForm} 
+                    postFeedback={this.props.postFeedback}
+                     /> } />
                     <Redirect to='/home' />
                 </Switch>
                 <Footer />
